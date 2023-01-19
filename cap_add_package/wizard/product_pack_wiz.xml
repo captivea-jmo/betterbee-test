@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id='product_pack_wizard_form' model='ir.ui.view'>
+        <field name='name'>Wizard Form view</field>
+        <field name='model'>product.package.wiz</field>
+        <field name='arch' type='xml'>
+            <form string="Product Package Delivery">
+                <sheet>
+                    <group>
+                        <field name="picking_id" invisible="1"/>
+                        <field name='product_packaging_ids'>
+                            <tree create="0" edit="1" editable="bottom">
+                                <field name="name"/>
+                                <field name="number"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string='Save' name='add_product_packaging' class='btn-primary' type='object'/>
+                    <button string='Cancel' class='btn-default' special='cancel'/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+        <record id="action_product_packaging_ksc_wizard" model="ir.actions.act_window">
+            <field name="name">Add Product Delivery Package</field>
+            <field name="res_model">product.package.wiz</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+</odoo>

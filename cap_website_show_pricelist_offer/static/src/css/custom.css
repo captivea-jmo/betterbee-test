@@ -1,0 +1,30 @@
+.variant_head {
+    background-color: #FACF3A;
+}
+
+.variant_head > th {
+    font-size: 11px;
+    font-weight: 1000;
+}
+
+.accordion > .card {
+/*     box-shadow: 1px 1px 1px #facf3a;
+    border-color: #facf3a; */
+    border: none;
+}
+.accordion {
+    padding-bottom: 15px;
+    margin-top: -25px;
+}
+
+.table th, .table td {
+    border-top: 1px solid #FACF3A;
+}
+
+div.card-body > .table thead th {
+    vertical-align: middle;
+}
+
+div.card-body > .table th, .table td {
+    vertical-align: middle;
+}

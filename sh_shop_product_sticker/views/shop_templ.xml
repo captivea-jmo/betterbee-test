@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!-- Product Item Template inherit For Product sticker Style-->
+    <template id="sh_shop_product_sticker_product_item_tmpl_inherit" inherit_id='website_sale.products_item' name="Ecomate Products Item">
+		<xpath expr="//span[contains(@t-attf-class, 'o_ribbon')]" position='attributes'>
+			<attribute name='t-attf-class'>d-none</attribute>
+		</xpath>
+		<xpath expr='//t[@t-set="bg_class"]' position='after'>
+			<t t-set="ribbon_style" t-value="td_product['ribbon']['sh_shop_product_sticker_product_sticker_style']"/>
+			<t t-set="sh_ribbon_bg_color" t-value="td_product['ribbon']['sh_shop_product_sticker_product_sticker_bg_color']"/>
+			<t t-set="sh_ribbon_text_color" t-value="td_product['ribbon']['sh_shop_product_sticker_product_sticker_text_color']"/>
+			<t t-if='ribbon_style in [	"sh_shop_product_sticker_product_sticker_style_1",
+										"sh_shop_product_sticker_product_sticker_style_3",
+										"sh_shop_product_sticker_product_sticker_style_4",
+										"sh_shop_product_sticker_product_sticker_style_5",
+										"sh_shop_product_sticker_product_sticker_style_6",
+										"sh_shop_product_sticker_product_sticker_style_9",
+										"sh_shop_product_sticker_product_sticker_style_11",
+										"sh_shop_product_sticker_product_sticker_style_12"
+										 ]'>
+				<span t-attf-class="o_ribbon #{ribbon_style} #{bg_class}"
+					t-attf-style="#{text_color and ('color: %s; ' % text_color)}#{bg_color and 'background-color:' + bg_color};color:#{sh_ribbon_text_color} !important;background-color:#{sh_ribbon_bg_color} !important;border-bottom-color:#{sh_ribbon_bg_color} !important;border-top-color:#{sh_ribbon_bg_color} !important;"
+					t-raw="td_product['ribbon']['html'] or ''"
+				/>
+			</t>
+			<t t-if='ribbon_style == "sh_shop_product_sticker_product_sticker_style_2"'>
+				<span class='sh_shop_product_sticker_product_sticker_style_extra_2' t-attf-style='background:#{sh_ribbon_bg_color};'>
+					<span t-attf-class="o_ribbon #{ribbon_style} #{bg_class}"
+					t-attf-style="#{text_color and ('color: %s; ' % text_color)}#{bg_color and 'background-color:' + bg_color};color:#{sh_ribbon_text_color} !important;background-color:#{sh_ribbon_bg_color} !important;border-bottom-color:#{sh_ribbon_bg_color} !important;border-top-color:#{sh_ribbon_bg_color} !important;"
+					t-raw="td_product['ribbon']['html'] or ''"
+				/>
+				</span>
+			</t>
+			<t t-if='ribbon_style in [	"sh_shop_product_sticker_product_sticker_style_7",
+										"sh_shop_product_sticker_product_sticker_style_8",
+										"sh_shop_product_sticker_product_sticker_style_10",
+										"sh_shop_product_sticker_product_sticker_style_13",
+										"sh_shop_product_sticker_product_sticker_style_14",
+										"sh_shop_product_sticker_product_sticker_style_15"
+										]'>
+					<span t-attf-class="o_ribbon #{ribbon_style} #{bg_class}"
+					t-attf-style="#{text_color and ('color: %s; ' % text_color)}#{bg_color and 'background-color:' + bg_color};color:#{sh_ribbon_text_color} !important;background-color:#{sh_ribbon_bg_color} !important;border-bottom-color:#{sh_ribbon_bg_color} !important;border-top-color:#{sh_ribbon_bg_color} !important;"
+					
+					>
+						<span class='extra_span' t-attf-style='border-bottom-color:#{sh_ribbon_bg_color} !important;' t-raw="td_product['ribbon']['html'] or ''"/>
+					</span>
+			</t>
+		</xpath>
+		
+    </template>
+</odoo>

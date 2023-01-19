@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="sh_website_gdpr_request_portal_menu" name="Portal layout : request menu entries" inherit_id="portal.portal_breadcrumbs" priority="21">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name == 'gdpr_request' or gdpr_request" t-attf-class="breadcrumb-item #{'active' if not gdpr_request else ''}">
+                <a t-if="gdpr_request" t-attf-href="/my/gdpr_request?{{ keep_query() }}">Requests</a>
+                <t t-else="">GDPR Data Request</t>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="sh_website_gdpr_request_portal_my_menu" name="Portal My Home : request entries" inherit_id="portal.portal_my_home" priority="21">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-if="website.is_enable_gdpr" t-call="portal.portal_docs_entry">
+                <t t-set="title">GDPR Data Request</t>
+                <t t-set="url" t-value="'/my/gdpr_request'" />
+                <t t-set="count" t-value="gdpr_request_count" />
+            </t>
+        </xpath>
+    </template>
+
+    <template id="request_my_gdpr_request" name="My Requests">
+        <t t-call="portal.portal_layout">
+            <style>
+                .badge_icon {
+                    margin-right: 5px;
+                    font-size: 14px;
+                }
+                .badge {
+                    font-size: 14px;
+                }
+                #download {
+                    border: 1px #2962ff solid;
+                    padding: 7px 8px;
+                    border-radius: 50%;
+                    color: #2962ff;
+                    font-size: 14px;
+                    transition: 0.4s;
+                }
+                #download:hover {
+                    border: 1px #2962ff solid;
+                    background: #2962ff;
+                    color: #fff;
+                    transition: 0.4s;
+                }
+                .reason {
+                    width: 120px;
+                    display: block;
+                    word-break: break-all;
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+                }
+                .o_portal_wrap .o_portal_my_doc_table td {
+                    white-space: inherit;
+                }
+            </style>
+            <t t-set="breadcrumbs_searchbar" t-value="True" />
+
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Requests</t>
+            </t>
+
+            <t t-call="portal.portal_table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Customer</th>
+                        <th>Data Category</th>
+                        <th>Request Type</th>
+                        <th>Status</th>
+                        <th style="text-align: center;">Action</th>
+                        <th>Cancel Reason</th>
+                    </tr>
+                </thead>
+                <t t-foreach="gdpr_requests" t-as="req">
+                    <tr>
+                        <td><span t-field="req.name" /></td>
+                        <td><span t-field="req.partner_id.name" /></td>
+                        <td><span t-field="req.data_categ_id.name" /></td>
+                        <td><span t-field="req.request_type" /></td>
+                        <td>
+                            <t t-if="req.state == 'pending'">
+                                <span class="badge badge-pill badge-info"><i class="fa fa-clock-o badge_icon"></i><span>Pending</span></span>
+                            </t>
+                            <t t-if="req.state == 'done'">
+                                <span class="badge badge-pill badge-success"><i class="fa fa-check-circle-o badge_icon"></i><span>Done</span></span>
+                            </t>
+                            <t t-if="req.state == 'cancel'">
+                                <span class="badge badge-pill badge-danger"><i class="fa fa-trash badge_icon"></i><span>Cancel</span></span>
+                            </t>
+                        </td>
+
+                        <td style="text-align: center;">
+                            <t t-if="req.state == 'done' and req.attachment and req.request_type == 'download'">
+                                <a id="download" t-attf-href="/web/content/sh.gdpr.data.request/#{req.id}/attachment?download=true" class="text-decoration-none" title="Download Content" role="img" aria-label="Download">
+                                    <i class="fa fa-download" />
+                                </a>
+                            </t>
+                        </td>
+
+                        <td><p class="reason" t-field="req.cancel_reason" /></td>
+                    </tr>
+                </t>
+            </t>
+            <t t-if="not gdpr_requests">
+                <div class="alert" role="alert" style="padding: 10px;">
+                    There are currently no requests.
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+gdpr_cookie_notice.access_website_cookie_notice,access_website_cookie_notice,gdpr_cookie_notice.model_website_cookie_notice,,1,1,0,0
+gdpr_cookie_notice.access_cookie_popup_group,access_cookie_popup_group,gdpr_cookie_notice.model_cookie_popup_group,base.group_user,1,1,1,1
+gdpr_cookie_notice.access_cookie_popup_group_info,access_cookie_popup_group_info,gdpr_cookie_notice.model_cookie_popup_group_info,base.group_user,1,1,1,1

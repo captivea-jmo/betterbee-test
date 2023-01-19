@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Enable GDPR Menu -->
+    <record model="res.groups" id="group_sh_website_gdpr_menu">
+        <field name="name">GDPR Data</field>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]" />
+    </record>
+
+    <record model="ir.rule" id="sh_gdpr_data_category_comp_rule">
+        <field name="name">GDPR Category multi-company</field>
+        <field name="model_id" ref="model_sh_gdpr_data_category" />
+        <field name="global" eval="True" />
+        <field name="domain_force">['|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+    </record>
+</odoo>

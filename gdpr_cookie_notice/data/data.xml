@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="1">
+        <!-- Data of cookie.popup.group.info  -->
+        <record id="group_highlight_1" model="cookie.popup.group.info">
+            <field name="name">Remember your cookie permission setting</field>
+        </record>
+        <record id="group_highlight_2" model="cookie.popup.group.info">
+            <field name="name">Allow session cookies</field>
+        </record>
+        <record id="group_highlight_3" model="cookie.popup.group.info">
+            <field name="name">Gather information you input into a contact forms, newsletter and other forms across all pages</field>
+        </record>
+        <record id="group_highlight_4" model="cookie.popup.group.info">
+            <field name="name">Keep track of what you input in shopping cart</field>
+        </record>
+        <record id="group_highlight_5" model="cookie.popup.group.info">
+            <field name="name">Remember language version you selected</field>
+        </record>
+        <record id="group_highlight_6" model="cookie.popup.group.info">
+            <field name="name">Remember social media settings</field>
+        </record>
+        <record id="group_highlight_7" model="cookie.popup.group.info">
+            <field name="name">Remember selected region and country</field>
+        </record>
+        <record id="group_highlight_8" model="cookie.popup.group.info">
+            <field name="name">Authenticate that you are logged into your user account</field>
+        </record>
+        <record id="group_highlight_9" model="cookie.popup.group.info">
+            <field name="name">Keep track of your visited pages and interaction taken</field>
+        </record>
+        <record id="group_highlight_10" model="cookie.popup.group.info">
+            <field name="name">Keep track about your location and region based on your IP number</field>
+        </record>
+        <record id="group_highlight_11" model="cookie.popup.group.info">
+            <field name="name">Keep track on the time spent on each page</field>
+        </record>
+        <record id="group_highlight_12" model="cookie.popup.group.info">
+            <field name="name">Increase the data quality of the statistics functions</field>
+        </record>
+        <record id="group_highlight_13" model="cookie.popup.group.info">
+            <field name="name">Use information for tailored advertising with third parties</field>
+        </record>
+        <record id="group_highlight_14" model="cookie.popup.group.info">
+            <field name="name">Allow you to connect to social sites</field>
+        </record>
+        <record id="group_highlight_15" model="cookie.popup.group.info">
+            <field name="name">Identify device you are using</field>
+        </record><record id="group_highlight_16" model="cookie.popup.group.info">
+            <field name="name">Gather personally identifiable information such as name and location</field>
+        </record>
+        <!-- Data of cookie.popup.group  -->
+        <record id="cookie_essential" model="cookie.popup.group">
+            <field name="name">Essential</field>
+            <field name="fa_icon">fa-check</field>
+            <field name="cookie_popup_group_info_ids" eval="[(6, 0, [ref('group_highlight_1'),ref('group_highlight_2'),ref('group_highlight_3'),ref('group_highlight_4')])]" />
+        </record>
+        <record id="cookie_functionality" model="cookie.popup.group">
+            <field name="name">Functionality</field>
+            <field name="fa_icon">fa-cog</field>
+            <field name="cookie_popup_group_info_ids" eval="[(6, 0, [ref('group_highlight_5'),ref('group_highlight_6'),ref('group_highlight_7'),ref('group_highlight_8')])]" />
+        </record>
+        <record id="cookie_analytics" model="cookie.popup.group">
+            <field name="name">Analytics</field>
+            <field name="fa_icon">fa-chart-bar</field>
+            <field name="cookie_popup_group_info_ids" eval="[(6, 0, [ref('group_highlight_9'),ref('group_highlight_10'),ref('group_highlight_11'),ref('group_highlight_12')])]" />
+        </record>
+        <record id="cookie_advertising" model="cookie.popup.group">
+            <field name="name">Advertising</field>
+            <field name="fa_icon">fa-exchange-alt</field>
+            <field name="cookie_popup_group_info_ids" eval="[(6, 0, [ref('group_highlight_13'),ref('group_highlight_14'),ref('group_highlight_15'),ref('group_highlight_16')])]" />
+        </record>
+        <!-- Data of website.cookie.notice  -->
+        <record id="cookie_settings" model="website.cookie.notice">
+            <field name="popup_title">Cookies Information</field>
+            <field name="popup_position">bottom-left</field>
+            <field name="distance">20</field>
+            <field name="box_style">classic</field>
+            <field name="box_shape">rounded</field>
+            <field name="background_color">#fff584</field>
+            <field name="text_color">#542d04</field>
+            <field name="button_shape">rounded</field>
+            <field name="button_color">#e1e1e1</field>
+            <field name="button_size">normal</field>
+            <field name="box_skin">skin-dark-theme</field>
+            <field name="gear_icon_position">bottom-left</field>
+            <field name="gear_icon_color">#6a8ee7</field>
+            <field name="popup_text">To make this site work properly, we sometimes place small data files called cookies on your device. Most big websites do this too.</field>
+            <field name="accept_button_text">Accept</field>
+            <field name="reject_button_text">Reject</field>
+            <field name="read_button_text">Read More</field>
+            <field name="read_more_link">#</field>
+            <field name="advenced_button_text">Change Settings</field>
+            <field name="accepted_text">This website will:</field>
+            <field name="declined_text">This website won't:</field>
+            <field name="save_btn">Save &amp; Close</field>
+            <field name="setting_popup_title">Privacy settings</field>
+            <field name="setting_popup_description" type="html">
+                <p>Decide which cookies you want to allow.</p>
+                <p>You can change these settings at any time. However, this can result in some functions no longer being available.
+                    For information on deleting the cookies, please consult your browser’s help function.
+                </p>
+                <span>Learn more about the cookies we use.</span>
+            </field>
+            <field name="group_slider_title">With the slider, you can enable or disable different types of cookies:</field>
+            <field name="cookies_expire_time">30</field>
+            <field name="cookies_path">/</field>
+            <field name="cookies_groups_design">skin-1</field>
+            <field name="cookie_popup_close_color">#ffffff</field>
+            <field name="close_popup_text">X</field>
+            <field name="default_group_id" ref="cookie_essential" />
+            <field name="cookie_group_ids" eval="[(6, 0, [ref('cookie_essential'),ref('cookie_functionality'),ref('cookie_analytics'),ref('cookie_advertising')])]" />
+        </record>
+    </data>
+</odoo>

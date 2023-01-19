@@ -1,0 +1,78 @@
+<odoo>
+    <data>
+        <template id="website_show_pricelist_offer.assets_frontend" inherit_id="website.assets_frontend">
+            <xpath expr="." position="inside">
+                <link href="/cap_website_show_pricelist_offer/static/src/css/custom.css" rel="stylesheet"/>
+            </xpath>
+        </template>
+        <template id="cap_product" inherit_id="website_show_pricelist_offer.product">
+            <xpath expr="//div[@id='heading1']" position="attributes">
+                <attribute name="class">d-none</attribute>
+            </xpath>
+            <xpath expr="//div[@id='accordion_offers']" position="after">
+                <xpath expr="//input[@name='add_qty']/.." position="move"/>
+            </xpath>
+            <xpath expr="//div[@id='collapse1']" position="replace">
+                <h3 class="font-weight-bold">Buy more and save:</h3>
+                <div id="collapse1" class="collapse show" role="tabpanel" aria-labelledby="heading1"
+                             data-parent="#accordion_offers">
+                    <div class="card-body" style="padding:0px; margin-top: 0px;">
+                        <table class="table table-striped" style="font-size: x-small; margin-bottom: 0px; line-height: 14px;">
+                            <thead>
+                                <tr class="variant_head">
+                                    <th class="d-none">Select</th>
+                                    <th>PRODUCT/VARIANT</th>
+                                    <th style="text-align: center">MIN QUANTITY</th>
+                                    <th style="text-align: center">PRICE EACH</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="applied_rules" t-as="rule">
+                                    <td class="d-none">
+                                        <div class="radio" style="margin-top: 8px;">
+                                            <label>
+                                                <input type="radio" t-att-data-product_id="rule['variant_id']"
+                                                       t-att-data-quantity="rule['qty']"
+                                                       t-att-data-rule='json.dumps(rule)'
+                                                       name="optradio" class="variant_offer"/>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="radiotext">
+                                            <label style="font-size: 12px;" t-att-for="rule['variant_id']">
+                                                <t t-esc="rule['variant']"/>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="radiotext">
+                                            <label style="font-size: 15px;" t-att-for="rule['variant_id']">
+                                                <t t-esc="int(float(rule['qty']))" />
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td class="text-right">
+                                        <div class="radiotext">
+                                            <label t-att-for="rule['variant_id']">
+                                                <span class="text-danger oe_default_price"
+                                                      style="text-decoration: line-through; white-space: nowrap; font-size: 15px;"
+                                                      t-esc="rule['list_price']"
+                                                      t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"
+                                                /><br/>
+                                                <span class="font-weight-bold"
+                                                      t-esc="rule['unit_price']"
+                                                      style="white-space: nowrap; font-size: 15px;"
+                                                      t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                            </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>

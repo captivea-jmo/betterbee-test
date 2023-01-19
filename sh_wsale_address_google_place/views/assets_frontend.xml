@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="sh_wsale_address_google_place_frontend_assets" inherit_id="website.assets_frontend" name="Goole Auto Complete Assets">
+        <xpath expr="//script[last()]" position="after">
+        	<script type="text/javascript" src="/sh_wsale_address_google_place/static/src/js/custom.js"/>
+        </xpath>
+    </template>
+
+</odoo>

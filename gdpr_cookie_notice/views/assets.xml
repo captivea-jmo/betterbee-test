@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="eu_gdpr_cookie_assets" inherit_id="website.assets_frontend">
+            <xpath expr="//script[last()]" position="after">
+                <script src="/gdpr_cookie_notice/static/src/js/tk-gdpr.min.js"></script>
+                <script src="/gdpr_cookie_notice/static/src/js/cookie.js"></script>
+            </xpath>
+        </template>
+    </data>
+</odoo>

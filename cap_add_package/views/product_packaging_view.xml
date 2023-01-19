@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_picking_form_inherit_website_sale_stocks" model="ir.ui.view">
+        <field name="name">stock.picking.form.inherit.pack.stock</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="%(cap_add_package.action_product_packaging_ksc_wizard)d"
+                        type="action" string="Add Packages" attrs="{'invisible': [('picking_type_code', '!=', 'outgoing')]}"/>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="product_manufactured_tree" model="ir.ui.view">
+            <field name="name">product.manufactured.tree</field>
+            <field name="model">product.manufactured</field>
+            <field name="arch" type="xml">
+                <tree >
+                    <field name="product_id"></field>
+                    <field name="quantity"></field>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>
+

@@ -1,0 +1,645 @@
+/* ========================
+	Product stickers Styles
+=========================== */
+.oe_product{overflow:hidden;}
+form.card{overflow:unset;}
+/* Style 1*/
+
+span.sh_shop_product_sticker_product_sticker_style_1:after{
+	    content: '';
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    bottom: -9px;
+    left: 47px;
+    border-left: 6px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 13px solid;
+    border-bottom-color: inherit;
+    filter: brightness(0.5);
+    transform: rotate(65deg);
+}
+
+span.sh_shop_product_sticker_product_sticker_style_1:before{
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    bottom: -6px;
+    right: 45px;
+    border-left: 10px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid;
+    border-bottom-color: inherit;
+    filter: brightness(0.5);
+    transform: rotate(44deg);
+}
+
+/* Style 2*/
+.sh_shop_product_sticker_product_sticker_style_2.o_ribbon_left{
+    position: absolute;
+    top: -8px;
+    left: unset;
+    bottom: auto;
+    right: 10px;
+    padding: 4px 3px;
+    transform: unset;
+    transform-origin: unset;
+    width: 60px;
+    border-top-right-radius: 8px;
+}
+.sh_shop_product_sticker_product_sticker_style_2.o_ribbon{white-space:unset;}
+.sh_shop_product_sticker_product_sticker_style_2.o_ribbon_left:after{
+	content: '';
+    position: absolute;
+    left: -10px;
+    top: 0;
+    background: rgba(0, 0, 0, 0.9);
+    width: 10px;
+    height: 7px;
+    border-radius: 5px 5px 0 0;
+    z-index: -3;
+}
+.sh_shop_product_sticker_product_sticker_style_2.o_ribbon_left:before{
+	content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -25px;
+    transform: translateX(-50%) rotateX(180deg);
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 25px solid;
+    border-bottom-color: inherit;
+}
+span.sh_shop_product_sticker_product_sticker_style_extra_2:after{
+	content: '';
+    position: absolute;
+    right: 70px;
+    top: -8px;
+    background: inherit;
+    width: 3px;
+    height: 7px;
+    z-index: -4;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Style 3*/
+
+.sh_shop_product_sticker_product_sticker_style_3.o_ribbon_left{
+    position: absolute;
+    top: -8px;
+    right: unset;
+    bottom: auto;
+    left: 10px;
+    padding: 4px 12px;
+    transform: unset;
+    transform-origin: unset;
+    width: 36px;
+}
+.sh_shop_product_sticker_product_sticker_style_3.o_ribbon{white-space:unset;}
+.sh_shop_product_sticker_product_sticker_style_3.o_ribbon_left:after{
+	content: '';
+    position: absolute;
+    top: 0px;
+    right: -8px;
+    width: 0;
+    height: 0;
+    border-bottom: 8px solid;
+    border-right: 8px solid transparent;
+    border-bottom-color: inherit;
+    filter: brightness(0.5);
+}
+.sh_shop_product_sticker_product_sticker_style_3.o_ribbon_left:before{
+	content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -19px;
+    transform: translateX(-50%) rotateX(180deg);
+    width: 0;
+    height: 0;
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    border-bottom: 19px solid;
+    border-bottom-color: inherit;
+}
+
+
+/* Style 4*/
+
+.sh_shop_product_sticker_product_sticker_style_4.o_ribbon_left{
+    position: absolute;
+    top: 5px;
+    left: -37px;
+    padding: 5px 23px 5px 30px;
+    width: 100px;
+    transform: rotate(-29deg);
+
+}
+.sh_shop_product_sticker_product_sticker_style_4.o_ribbon_left:after{
+	content: '';
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    bottom: -5px;
+    left: -1.1px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 7px solid;
+    border-bottom-color: inherit;
+    filter: brightness(0.5);
+    transform: rotate(64deg);
+}
+.sh_shop_product_sticker_product_sticker_style_4.o_ribbon_left:before{
+	content: '';
+    position: absolute;
+    top: 0%;
+    right: -19px;
+    width: 0;
+    height: 0;
+    border-top: 20px solid;
+    border-right: 20px solid transparent;
+    border-bottom: 14px solid;
+    border-bottom-color: inherit;
+    border-top-color: inherit;
+}
+
+@media only screen and (max-width: 1024px) {
+	.sh_shop_product_sticker_product_sticker_style_4.o_ribbon_left{left: -36px;}
+}
+@media only screen and (max-width: 768px) {
+	.sh_shop_product_sticker_product_sticker_style_4.o_ribbon_left{left: -36px;}
+}
+@media only screen and (max-width: 414px) {
+.sh_shop_product_sticker_product_sticker_style_4.o_ribbon_left{left: -36px;}
+}
+@media only screen and (max-width: 360px) {
+.sh_shop_product_sticker_product_sticker_style_4.o_ribbon_left{left: -36px;}
+}
+
+
+
+/* Style 5*/
+
+.sh_shop_product_sticker_product_sticker_style_5.o_ribbon_left{
+    position: absolute;
+    top: 5px;
+    left: -37px;
+    padding: 5px 23px 5px 30px;
+    width: 100px;
+    transform: rotate(-29deg);
+}
+.sh_shop_product_sticker_product_sticker_style_5.o_ribbon_left:after{
+	content: '';
+    position: absolute;
+    width: 0px;
+    height: 0px;
+        bottom: -5px;
+    left: -1.1px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 7px solid;
+    border-bottom-color: inherit;
+    filter: brightness(0.5);
+    transform: rotate(64deg);
+}
+
+@media only screen and (max-width: 1024px) {
+	.sh_shop_product_sticker_product_sticker_style_5.o_ribbon_left{left: -36px;}
+}
+@media only screen and (max-width: 768px) {
+	.sh_shop_product_sticker_product_sticker_style_5.o_ribbon_left{left: -36px;}
+}
+@media only screen and (max-width: 414px) {
+.sh_shop_product_sticker_product_sticker_style_5.o_ribbon_left{left: -36px;}
+}
+@media only screen and (max-width: 360px) {
+.sh_shop_product_sticker_product_sticker_style_5.o_ribbon_left{left: -36px;}
+}
+
+/* Style 6*/
+
+.sh_shop_product_sticker_product_sticker_style_6.o_ribbon_left{
+position: absolute;
+    top: 5px;
+    left: -37px;
+    padding: 5px 23px 5px 30px;
+    width: 100px;
+    transform: rotate(-29deg);
+	border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+.sh_shop_product_sticker_product_sticker_style_6.o_ribbon_left:after{
+	content: '';
+    position: absolute;
+    width: 0px;
+    height: 0px;
+        bottom: -5px;
+    left: -1.1px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 7px solid;
+    border-bottom-color: inherit;
+    filter: brightness(0.5);
+    transform: rotate(64deg);
+}
+@media only screen and (max-width: 1024px) {
+	.sh_shop_product_sticker_product_sticker_style_6.o_ribbon_left{left: -36px;}
+}
+@media only screen and (max-width: 768px) {
+	.sh_shop_product_sticker_product_sticker_style_6.o_ribbon_left{left: -36px;}
+}
+@media only screen and (max-width: 414px) {
+.sh_shop_product_sticker_product_sticker_style_6.o_ribbon_left{left: -36px;}
+}
+@media only screen and (max-width: 360px) {
+.sh_shop_product_sticker_product_sticker_style_6.o_ribbon_left{left: -36px;}
+}
+
+
+/* Style 7*/
+
+.sh_shop_product_sticker_product_sticker_style_7.o_ribbon_left{
+        position: absolute;
+    top: 10px;
+    left: 64px;
+    bottom: auto;
+    right: auto;
+    padding: 5px 0px 5px 5px;
+    transform: translateX(calc(0.708 * (100% - 200px) - 100%)) rotate(0deg) translateX(100px);
+    transform-origin: top right;
+    width: 100px;
+    border-bottom-left-radius: 8px;
+}
+.sh_shop_product_sticker_product_sticker_style_7.o_ribbon_left:after{
+	    content: '';
+    position: absolute;
+    width: 6px;
+    height: 4px;
+    top: -4px;
+    left: 0px;
+    background: inherit;
+}
+.sh_shop_product_sticker_product_sticker_style_7.o_ribbon_left:before{
+	content: '';
+    position: absolute;
+    top: 0%;
+    right: -19px;
+    width: 0;
+    height: 0;
+    border-top: 17px solid;
+    border-right: 20px solid transparent;
+    border-bottom: 17px solid;
+    border-bottom-color: inherit;
+    border-top-color: inherit;
+}
+.sh_shop_product_sticker_product_sticker_style_7 .extra_span:after{
+	content: '';
+    position: absolute;
+    left: -1px;
+    top: -7px;
+    background: rgba(0, 0, 0, 0.9);
+    width: 8px;
+    height: 6px;
+    border-radius: 10px 10px 0 0;
+    z-index: 29;
+    transform: rotateZ(-90deg);
+}
+
+@media only screen and (max-width: 1024px) {
+	.sh_shop_product_sticker_product_sticker_style_7.o_ribbon_left{left:64px;}
+}
+@media only screen and (max-width: 414px) {
+	.sh_shop_product_sticker_product_sticker_style_7.o_ribbon_left{left:64px;}
+}
+@media only screen and (max-width: 360px) {
+	.sh_shop_product_sticker_product_sticker_style_7.o_ribbon_left{left:64px;}
+}
+
+
+
+
+/* Style 8*/
+
+.sh_shop_product_sticker_product_sticker_style_8.o_ribbon_left{
+        position: absolute;
+    top: 11px;
+    left: 64px;
+    bottom: auto;
+    right: auto;
+    padding: 5px 0px 5px 5px;
+    transform: translateX(calc(0.708 * (100% - 200px) - 100%)) rotate(0deg) translateX(100px);
+    transform-origin: top right;
+    width: 100px;
+}
+.sh_shop_product_sticker_product_sticker_style_8.o_ribbon_left:after{
+	    content: '';
+    position: absolute;
+    width: 4px;
+    height: 42px;
+    top: -4px;
+    left: 0px;
+    background: inherit;
+}
+.sh_shop_product_sticker_product_sticker_style_8.o_ribbon_left:before{
+	content: '';
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-50%) rotateZ(90deg);
+    width: 0;
+    height: 0;
+    border-left: 17px solid transparent;
+    border-right: 17px solid transparent;
+    border-bottom: 18px solid;
+    border-bottom-color: inherit;
+}
+.sh_shop_product_sticker_product_sticker_style_8 .extra_span:after{
+	content: '';
+    position: absolute;
+    left: -0.8px;
+    top: -7px;
+    background: rgba(0, 0, 0, 0.9);
+    width: 8px;
+    height: 6px;
+    border-radius: 10px 10px 0 0;
+    z-index: 29;
+    transform: rotateZ(-90deg);
+}
+.sh_shop_product_sticker_product_sticker_style_8 .extra_span:before{
+	content: '';
+    position: absolute;
+    left: -0.8px;
+    bottom: -7px;
+    background: rgba(0, 0, 0, 0.9);
+    width: 8px;
+    height: 6px;
+    border-radius: 10px 10px 0 0;
+    z-index: 29;
+    transform: rotateZ(-90deg);
+}
+
+@media only screen and (max-width: 1024px) {
+	.sh_shop_product_sticker_product_sticker_style_8.o_ribbon_left{left:64px;}
+}
+@media only screen and (max-width: 414px) {
+	.sh_shop_product_sticker_product_sticker_style_8.o_ribbon_left{left:64px;}
+}
+@media only screen and (max-width: 360px) {
+	.sh_shop_product_sticker_product_sticker_style_8.o_ribbon_left{left:64px;}
+}
+
+/* Style 9*/
+
+.sh_shop_product_sticker_product_sticker_style_9.o_ribbon_left{
+	position: absolute;
+    top: 5px;
+    right: 7px;
+    bottom: auto;
+    left: auto;
+    padding: 2px 10px;
+    transform: unset;
+    transform-origin: unset;
+}
+
+
+
+/* Style 10*/
+
+.sh_shop_product_sticker_product_sticker_style_10.o_ribbon_left{
+	position: absolute;
+    top: 5px;
+    right: 7px;
+    bottom: auto;
+    left: auto;
+    padding: 0px 0px;
+    transform: unset;
+    transform-origin: unset;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: normal;
+}
+.sh_shop_product_sticker_product_sticker_style_10 .extra_span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    white-space: normal;
+    width: inherit;
+}
+
+
+/* Style 11*/
+
+.sh_shop_product_sticker_product_sticker_style_11.o_ribbon_left{
+	position: absolute;
+    top: 0px;
+    right: 5px;
+    bottom: auto;
+    left: auto;
+    padding: 0px 2px 6px 2px;
+    transform: unset;
+    transform-origin: unset;
+    width: 58px;
+    height: auto;
+    display: block;
+    white-space: normal;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+
+/* Style 12*/
+
+.sh_shop_product_sticker_product_sticker_style_12.o_ribbon_left{
+	position: absolute;
+    top: 6px;
+    left: 16px;
+    bottom: auto;
+    right: auto;
+    padding: 0 10px;
+    transform: unset;
+    transform-origin: unset;
+    width: auto;
+    height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sh_shop_product_sticker_product_sticker_style_12.o_ribbon_left:before{
+	content: "";
+    position: absolute;
+    display: block;
+    left: -21px;
+    top: 6px;
+    width: 0;
+    height: 0;
+    border-right: 13.5px solid transparent;
+    border-left: 13.5px solid transparent;
+    border-bottom: 15px solid;
+    border-bottom-color: inherit;
+    transform: rotateZ(-90deg);
+}
+.sh_shop_product_sticker_product_sticker_style_12.o_ribbon_left:after{
+   	content: "";
+    background-color: white;
+    border-radius: 50%;
+    width: 4px;
+    height: 4px;
+    display: block;
+    position: absolute;
+    left: -5px;
+    top: 11px;
+}
+
+/* Style 13*/
+
+.sh_shop_product_sticker_product_sticker_style_13.o_ribbon_left{
+position: absolute;
+    top: -8px;
+    left: unset;
+    bottom: auto;
+    right: 8px;
+    padding: 4px 4px;
+    transform: unset;
+    transform-origin: unset;
+    width: 60px;
+}
+.sh_shop_product_sticker_product_sticker_style_13.o_ribbon{white-space:unset;}
+.sh_shop_product_sticker_product_sticker_style_13.o_ribbon_left:after{
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: -8px;
+    width: 0;
+    height: 0;
+    border-bottom: 8px solid;
+    border-right: 8px solid transparent;
+    border-bottom-color: inherit;
+    filter: brightness(0.5);
+}
+.sh_shop_product_sticker_product_sticker_style_13.o_ribbon_left:before{
+content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -16px;    transform: translateX(-50%) rotateX(180deg);
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 16px solid;
+    border-bottom-color: inherit;
+}
+.sh_shop_product_sticker_product_sticker_style_13 .extra_span:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -8px;
+    transform: rotateZ(-90deg);
+    width: 0;
+    height: 0;
+    border-bottom: 8px solid;
+    border-right: 8px solid transparent;
+    border-bottom-color: inherit;
+    filter: brightness(0.5);
+}
+
+
+
+/* Style 14*/
+
+.sh_shop_product_sticker_product_sticker_style_14.o_ribbon_left{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    left: unset;
+    padding: 0;
+    transform: unset;
+    transform-origin: unset;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    white-space: normal;
+}
+
+.sh_shop_product_sticker_product_sticker_style_14.o_ribbon_left:after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: inherit;
+    z-index: -13;
+    transform: rotateZ(60deg);
+}
+
+.sh_shop_product_sticker_product_sticker_style_14.o_ribbon_left:before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: inherit;
+    z-index: -23;
+    transform: rotateZ(30deg);
+}
+
+
+
+
+	/* style 15 */
+
+.sh_shop_product_sticker_product_sticker_style_15.o_ribbon_left{
+        position: absolute;
+    top: 4px;
+    right: auto;
+    bottom: auto;
+    left: 7px;
+    padding: 0px 0px;
+    transform: unset;
+    transform-origin: unset;
+    border-radius: 50px;
+    width: 60px;
+    height: 60px;
+    white-space: normal;
+	z-index: 0;
+}
+.sh_shop_product_sticker_product_sticker_style_15.o_ribbon_left:after{
+content: '';
+    position: absolute;
+    width: 16px;
+    height: 34px;
+    top: 16px;
+    left: -7px;
+    background: inherit;
+	z-index: -1;
+}
+.sh_shop_product_sticker_product_sticker_style_15 .extra_span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    white-space: normal;
+    width: inherit;
+}

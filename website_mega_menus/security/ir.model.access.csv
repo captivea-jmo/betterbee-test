@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_wk_mega_menu,Mega Menu,model_wk_mega_menu,,1,1,1,1
+access_wk_mega_menu_featured_products,Wk Featured products,model_wk_mega_menu_featured_products,,1,1,1,1

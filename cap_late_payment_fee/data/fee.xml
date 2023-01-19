@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_add_late_fee" model="ir.actions.server">
+        <field name="name">CAP_ Add a late Fee</field>
+        <field name="type">ir.actions.server</field>
+        <field name="state">code</field>
+        <field name="model_id" ref="account.model_account_move"/>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="code">
+          if records:
+            action = records.lateFee()
+        </field>
+    </record>
+
+    <record id="scheduled_action_late_fee" model="ir.cron">
+      <field name="name">CAP_ Add late fee on late invoices</field>
+      <field name="model_id" ref="account.model_account_move"/>
+      <field name="interval_number">1</field>
+      <field name="interval_type">days</field>
+      <field name="numbercall">-1</field>
+      <field name="active">True</field>
+      <field name="state">code</field>
+      <field name="code">
+invoices = env['account.move'].search([('state','=','posted'),('payment_state','=','not_paid')])
+today = datetime.datetime.today()
+for invoice in invoices:
+  if invoice['partner_id']['late_fee_boolean']:
+    if invoice['create_date']&lt; (today-datetime.timedelta(days=invoice['partner_id']['days_for_fee'])):
+      invoice.lateFee()
+
+
+
+      </field>
+    </record>
+</odoo>

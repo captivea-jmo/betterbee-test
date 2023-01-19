@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Personal User and Address Details report -->
+    <template id="sh_website_gdpr_request_report">
+        <t t-call="web.html_container">
+            <style>
+                td {
+                    border: 1px grey solid;
+                    padding: 3px;
+                }
+            </style>
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page" style="padding-top: 70px;">
+                        <t t-if="doc.data_categ_id.type == 'user'">
+                            <h3>User Personal Details</h3>
+                            <table width="100%">
+                                <tr>
+                                    <td style="background: #eee; border: 1px grey solid; padding: 3px;">Name</td>
+                                    <td style="border: 1px grey solid; padding: 3px;"><span t-field="doc.partner_id.name"></span></td>
+                                </tr>
+                                <tr>
+                                    <td style="background: #eee; border: 1px grey solid; padding: 3px;">Phone</td>
+                                    <td style="border: 1px grey solid; padding: 3px;"><span t-field="doc.partner_id.phone"></span></td>
+                                </tr>
+
+                                <tr>
+                                    <td style="background: #eee; border: 1px grey solid; padding: 3px;">Email</td>
+                                    <td style="border: 1px grey solid; padding: 3px;"><span t-field="doc.partner_id.email"></span></td>
+                                </tr>
+                                <tr>
+                                    <td style="background: #eee; border: 1px grey solid; padding: 3px;">Company Name</td>
+                                    <td style="border: 1px grey solid; padding: 3px;"><span t-field="doc.partner_id.company_name"></span></td>
+                                </tr>
+                                <tr>
+                                    <td style="background: #eee; border: 1px grey solid; padding: 3px;">VAT</td>
+                                    <td style="border: 1px grey solid; padding: 3px;"><span t-field="doc.partner_id.vat"></span></td>
+                                </tr>
+                            </table>
+                        </t>
+                        <t t-if="doc.data_categ_id.type == 'address'">
+                            <h3>User Address Details</h3>
+                            <table width="100%">
+                                <tr>
+                                    <td style="background: #eee; border: 1px grey solid; padding: 3px;">Street</td>
+                                    <td style="border: 1px grey solid; padding: 3px;"><span t-field="doc.partner_id.street"></span></td>
+                                </tr>
+                                <tr>
+                                    <td style="background: #eee; border: 1px grey solid; padding: 3px;">Street 2</td>
+                                    <td style="border: 1px grey solid; padding: 3px;"><span t-field="doc.partner_id.street2"></span></td>
+                                </tr>
+                                <tr>
+                                    <td style="background: #eee; border: 1px grey solid; padding: 3px;">City</td>
+                                    <td style="border: 1px grey solid; padding: 3px;"><span t-field="doc.partner_id.city"></span></td>
+                                </tr>
+                                <tr>
+                                    <td style="background: #eee; border: 1px grey solid; padding: 3px;">Zip</td>
+                                    <td style="border: 1px grey solid; padding: 3px;"><span t-field="doc.partner_id.zip"></span></td>
+                                </tr>
+                                <tr>
+                                    <td style="background: #eee; border: 1px grey solid; padding: 3px;">State</td>
+                                    <td style="border: 1px grey solid; padding: 3px;"><span t-field="doc.partner_id.state_id"></span></td>
+                                </tr>
+                                <tr>
+                                    <td style="background: #eee; border: 1px grey solid; padding: 3px;">Country</td>
+                                    <td style="border: 1px grey solid; padding: 3px;"><span t-field="doc.partner_id.country_id"></span></td>
+                                </tr>
+                            </table>
+                        </t>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_report_gdpr_data_download" model="ir.actions.report">
+        <field name="name">Generate Data</field>
+        <field name="model">sh.gdpr.data.request</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">sh_website_gdpr.sh_website_gdpr_request_report</field>
+        <field name="report_file">sh_website_gdpr.sh_website_gdpr_request_report</field>
+        <field name="print_report_name">'GDPR Data - %s' % (object.name).replace('/', '')</field>
+        <field name="binding_model_id" ref="model_sh_gdpr_data_request" />
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

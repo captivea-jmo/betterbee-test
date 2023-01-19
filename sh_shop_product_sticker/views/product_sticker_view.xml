@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!-- Product sticker -->
+    <record id="sh_shop_product_sticker_product_sticker_product_form_inherit" model="ir.ui.view">
+        <field name="name">sh.shop.product.sticker.product.sticker.product.form.inherit</field>
+        <field name="model">product.ribbon</field>
+        <field name="arch" type="xml">
+			<form>
+				<sheet>
+					<group>
+						<group>
+							<field name='html' />
+							<field name='sh_shop_product_sticker_product_sticker_style'/>
+							<field name='sh_shop_product_sticker_product_sticker_text_color' widget='color' attrs="{'invisible':[('sh_shop_product_sticker_product_sticker_style','=',False)]}" />
+							<field name='sh_shop_product_sticker_product_sticker_bg_color' widget='color' attrs="{'invisible':[('sh_shop_product_sticker_product_sticker_style','=',False)]}"/>
+						</group>
+						<group>
+							<field name='html_class'/>
+						</group>
+					</group>
+				</sheet>
+			</form>                
+        </field>
+    </record>
+    
+    
+    <record id="sh_shop_product_sticker_product_sticker_product_tree" model="ir.ui.view">
+        <field name="name">sh.shop.product.sticker.product.sticker.product.tree</field>
+        <field name="model">product.ribbon</field>
+        <field name="arch" type="xml">
+			<tree>
+				<field name='html'/>
+			</tree>                
+        </field>
+    </record>
+    
+    <record id="sh_shop_product_sticker_product_sticker_product_search" model="ir.ui.view">
+        <field name="name">sh.shop.product.sticker.product.sticker.product.search</field>
+        <field name="model">product.ribbon</field>
+        <field name="arch" type="xml">
+            <search>
+                <field
+                    name="html"
+                    filter_domain="[('html', 'ilike', self)]"
+                />
+            </search>
+        </field>
+    </record>
+    
+    <record id="sh_shop_product_sticker_product_sticker_product_action" model="ir.actions.act_window">
+        <field name="name">Product Ribbon</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.ribbon</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <menuitem id="sh_shop_product_sticker_product_sticker_product_menu" action="sh_shop_product_sticker_product_sticker_product_action" parent="website_sale.menu_product_settings" name="Ribbon" />
+    
+</odoo>

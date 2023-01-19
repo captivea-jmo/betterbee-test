@@ -1,0 +1,642 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sh_website_gdpr
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-22 06:49+0000\n"
+"PO-Revision-Date: 2020-10-22 06:49+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.category_my_category
+msgid "&amp;times;"
+msgstr "&amp;مرات;"
+
+#. module: sh_website_gdpr
+#: model:ir.actions.report,print_report_name:sh_website_gdpr.action_report_gdpr_data_download
+msgid "'GDPR Data - %s' % (object.name).replace('/', '')"
+msgstr "بيانات GDPR - %s' % (object.name).replace('/', '')"
+
+#. module: sh_website_gdpr
+#: model:mail.template,body_html:sh_website_gdpr.email_template_download_success
+msgid ""
+"<div style=\"line-height: 28px;\">Hello <b>${object.partner_id.name}</b>,<br/>\n"
+"             You have requested information of <b>${object.data_categ_id.name}</b>.<br/>\n"
+"             We have provided information here.\n"
+"                    <br/>\n"
+"                    <a class=\"btn btn-primary\" role=\"button\" href=\"${object.env.context.get('customer_url')}\">Click here to check request</a>\n"
+"                    <br/>\n"
+"                    <div>Thank you</div>\n"
+"                </div>\n"
+"        "
+msgstr ""
+"<div style=\"line-height: 28px;\">مرحبا <b>${object.partner_id.name}</b>,<br/>\n"
+"             لقد طلبت المعلومات من <b>${object.data_categ_id.name}</b>.<br/>\n"
+"             قدمنا ​​المعلومات هنا.\n"
+"                    <br/>\n"
+"                    <a class=\"btn btn-primary\" role=\"button\" href=\"${object.env.context.get('customer_url')}\">اضغط هنا للتحقق الطلب</a>\n"
+"                    <br/>\n"
+"                    <div>شكرا</div>\n"
+"                </div>\n"
+"        "
+
+#. module: sh_website_gdpr
+#: model:mail.template,body_html:sh_website_gdpr.email_template_delete_success
+msgid ""
+"<div style=\"line-height: 28px;\">Hello <b>${object.partner_id.name}</b>,<br/>\n"
+"             You have requested to remove information of <b>${object.data_categ_id.name}</b>.<br/>\n"
+"             We have successfully removed information.\n"
+"                    <br/>\n"
+"                    <a class=\"btn btn-primary\" role=\"button\" href=\"${object.env.context.get('customer_url')}\">Click here to check request</a>\n"
+"                    <br/>\n"
+"                    <div>Thank you</div>\n"
+"                </div>\n"
+"        "
+msgstr ""
+"<div style=\"line-height: 28px;\">مرحبا <b>${object.partner_id.name}</b>,<br/>\n"
+"             لقد طلبت لإزالة المعلومات من <b>${object.data_categ_id.name}</b>.<br/>\n"
+"             قمنا بإزالة المعلومات بنجاح.\n"
+"                    <br/>\n"
+"                    <a class=\"btn btn-primary\" role=\"button\" href=\"${object.env.context.get('customer_url')}\">اضغط هنا للتحقق الطلب</a>\n"
+"                    <br/>\n"
+"                    <div>شكرا</div>\n"
+"                </div>\n"
+"        "
+
+#. module: sh_website_gdpr
+#: model:mail.template,body_html:sh_website_gdpr.email_template_download_customer
+msgid ""
+"<div style=\"line-height: 28px;\">Hello <b>${object.partner_id.name}</b>,<br/>\n"
+"            You have requested to information of <b>${object.data_categ_id.name}</b>.<br/>\n"
+"             We will provide information as soon as possible.\n"
+"                    <br/>\n"
+"                    <a class=\"btn btn-primary\" role=\"button\" href=\"${object.env.context.get('customer_url')}\">Click here to check request</a>\n"
+"                    <br/>\n"
+"                    <div>Thank you</div>\n"
+"                </div>\n"
+"        "
+msgstr ""
+"<div style=\"line-height: 28px;\">Hello <b>${object.partner_id.name}</b>,<br/>\n"
+"            لقد طلب معلومات <b>${object.data_categ_id.name}</b>.<br/>\n"
+"             وسوف نقدم المعلومات في أسرع وقت ممكن.\n"
+"                    <br/>\n"
+"                    <a class=\"btn btn-primary\" role=\"button\" href=\"${object.env.context.get('customer_url')}\">Click here to check request</a>\n"
+"                    <br/>\n"
+"                    <div>شكرا</div>\n"
+"                </div>\n"
+"        "
+
+#. module: sh_website_gdpr
+#: model:mail.template,body_html:sh_website_gdpr.email_template_delete_customer
+msgid ""
+"<div style=\"line-height: 28px;\">Hello <b>${object.partner_id.name}</b>,<br/>\n"
+"            You have requested to remove information of <b>${object.data_categ_id.name}</b>.<br/>\n"
+"             We will remove your information as soon as possible.\n"
+"                    <br/>\n"
+"                    <a class=\"btn btn-primary\" role=\"button\" href=\"${object.env.context.get('customer_url')}\">Click here to check request</a>\n"
+"                    <br/>\n"
+"                    <div>Thank you</div>\n"
+"                </div>\n"
+"        "
+msgstr ""
+"<div style=\"line-height: 28px;\">مرحبا <b>${object.partner_id.name}</b>,<br/>\n"
+"            لقد طلبت لإزالة المعلومات من <b>${object.data_categ_id.name}</b>.<br/>\n"
+"             سنقوم بإزالة المعلومات الخاصة بك في أقرب وقت ممكن.\n"
+"                    <br/>\n"
+"                    <a class=\"btn btn-primary\" role=\"button\" href=\"${object.env.context.get('customer_url')}\">Click here to check request</a>\n"
+"                    <br/>\n"
+"                    <div>شكرا</div>\n"
+"                </div>\n"
+"        "
+
+
+#. module: sh_website_gdpr
+#: model:mail.template,body_html:sh_website_gdpr.email_template_download_responsible_person
+msgid ""
+"<div style=\"line-height: 28px;\">Hello There,<br/>\n"
+"            <b>${object.partner_id.name}</b> have requested information of <b>${object.data_categ_id.name}.</b>\n"
+"                    <br/>\n"
+"                    <a class=\"btn btn-primary\" role=\"button\" href=\"${object.env.context.get('customer_url')}\">Click here to check request</a>\n"
+"                    <br/>\n"
+"                    <div>Thank you</div>\n"
+"                </div>\n"
+"        "
+msgstr ""
+"<div style=\"line-height: 28px;\">مرحبا،<br/>\n"
+"            <b>${object.partner_id.name}</b> لدينا المعلومات المطلوبة من <b>${object.data_categ_id.name}.</b>\n"
+"                    <br/>\n"
+"                    <a class=\"btn btn-primary\" role=\"button\" href=\"${object.env.context.get('customer_url')}\">اضغط هنا للتحقق الطلب</a>\n"
+"                    <br/>\n"
+"                    <div>شكرا</div>\n"
+"                </div>\n"
+"        "
+
+#. module: sh_website_gdpr
+#: model:mail.template,body_html:sh_website_gdpr.email_template_delete_responsible_person
+msgid ""
+"<div style=\"line-height: 28px;\">Hello There,<br/>\n"
+"            <b>${object.partner_id.name}</b> have requested to remove information of <b>${object.data_categ_id.name}.</b>\n"
+"                    <br/>\n"
+"                    <a class=\"btn btn-primary\" role=\"button\" href=\"${object.env.context.get('customer_url')}\">Click here to check request</a>\n"
+"                    <br/>\n"
+"                    <div>Thank you</div>\n"
+"                </div>\n"
+"        "
+msgstr ""
+"<div style=\"line-height: 28px;\">مرحبا،<br/>\n"
+"            <b>${object.partner_id.name}</b> وقد طلبت لإزالة المعلومات من <b>${object.data_categ_id.name}.</b>\n"
+"                    <br/>\n"
+"                    <a class=\"btn btn-primary\" role=\"button\" href=\"${object.env.context.get('customer_url')}\">اضغط هنا للتحقق الطلب</a>\n"
+"                    <br/>\n"
+"                    <div>شكرا</div>\n"
+"                </div>\n"
+"        "
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.category_my_category
+msgid "<span class=\"alert_text\">Are You Sure !</span>"
+msgstr "<span class=\"alert_text\">هل أنت واثق !</span>"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.request_my_gdpr_request
+msgid ""
+"<span class=\"badge badge-pill badge-danger\"><i class=\"fa fa-trash "
+"badge_icon\"/><span>Cancel</span></span>"
+msgstr ""
+"<span class=\"badge badge-pill badge-danger\"><i class=\"fa fa-trash "
+"badge_icon\"/><span>إلغاء</span></span>"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.request_my_gdpr_request
+msgid ""
+"<span class=\"badge badge-pill badge-info\"><i class=\"fa fa-clock-o "
+"badge_icon\"/><span>Pending</span></span>"
+msgstr ""
+"<span class=\"badge badge-pill badge-info\"><i class=\"fa fa-clock-o "
+"badge_icon\"/><span>قيد الانتظار</span></span>"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.request_my_gdpr_request
+msgid ""
+"<span class=\"badge badge-pill badge-success\"><i class=\"fa fa-check-"
+"circle-o badge_icon\"/><span>Done</span></span>"
+msgstr ""
+"<span class=\"badge badge-pill badge-success\"><i class=\"fa fa-check-"
+"circle-o badge_icon\"/><span>منجز</span></span>"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.category_my_category
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.request_my_gdpr_request
+msgid "Action"
+msgstr "عمل"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_category__active
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_category_search
+msgid "Active"
+msgstr "نشيط"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields.selection,name:sh_website_gdpr.selection__sh_gdpr_data_category__type__address
+msgid "Address"
+msgstr "عنوان"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__attachment
+msgid "Attachments"
+msgstr "مرفقات"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields.selection,name:sh_website_gdpr.selection__sh_gdpr_data_request__state__cancel
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_cancel_reason_wizard_view
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_form
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_search
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: sh_website_gdpr
+#: model:ir.actions.act_window,name:sh_website_gdpr.sh_website_gdpr_cancel_reason_wizard_action
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__cancel_reason
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.request_my_gdpr_request
+msgid "Cancel Reason"
+msgstr "إلغاء السبب"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_category_portal_menu
+msgid "Category"
+msgstr "الفئة"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_report
+msgid "City"
+msgstr "مدينة"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_category__company_id
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__company_id
+msgid "Company"
+msgstr "شركة"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_report
+msgid "Company Name"
+msgstr "اسم الشركة"
+
+#. module: sh_website_gdpr
+#: model:ir.model,name:sh_website_gdpr.model_res_config_settings
+msgid "Config Settings"
+msgstr "إعدادات التكوين"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_report
+msgid "Country"
+msgstr "بلد"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_category_search
+msgid "Create Date"
+msgstr "إنشاء التسجيل"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_category_search
+msgid "Created On"
+msgstr "تم إنشاؤها على"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_category__create_uid
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__create_uid
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_website_gdpr_cancel_reason_wizard__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_category__create_date
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__create_date
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_website_gdpr_cancel_reason_wizard__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها على"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__partner_id
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_website__is_customer
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.request_my_gdpr_request
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_search
+msgid "Customer"
+msgstr "زبون"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__data_categ_id
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.request_my_gdpr_request
+msgid "Data Category"
+msgstr "بيانات الفئة"
+
+#. module: sh_website_gdpr
+#: model:ir.actions.act_window,name:sh_website_gdpr.sh_website_gdpr_category_action
+msgid "Data GDPR Category"
+msgstr "GDPR البيانات الفئة"
+
+#. module: sh_website_gdpr
+#: model:ir.actions.act_window,name:sh_website_gdpr.sh_website_gdpr_request_action
+msgid "Data GDPR Request"
+msgstr "GDPR البيانات طلب"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__data_wiped
+msgid "Data Wiped"
+msgstr "مسح بياناته"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields.selection,name:sh_website_gdpr.selection__sh_gdpr_data_request__request_type__delete
+msgid "Delete"
+msgstr "حذف"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_category__display_name
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__display_name
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_website_gdpr_cancel_reason_wizard__display_name
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_website__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields.selection,name:sh_website_gdpr.selection__sh_gdpr_data_request__state__done
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_form
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_search
+msgid "Done"
+msgstr "منجز"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields.selection,name:sh_website_gdpr.selection__sh_gdpr_data_request__request_type__download
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.request_my_gdpr_request
+msgid "Download"
+msgstr "تحميل"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.request_my_gdpr_request
+msgid "Download Content"
+msgstr "حمل المضمون"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_report
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_res_config_settings__is_customer
+msgid "Enable Customer Email Notification"
+msgstr "تمكين العملاء البريد الإلكتروني الإخطار"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_res_config_settings__is_enable_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_website__is_enable_gdpr
+msgid "Enable GDPR"
+msgstr "تمكين GDPR"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_res_config_settings__is_enable_email
+msgid "Enable Responsible Person Email Notification"
+msgstr "تمكين الشخص المسؤول التبليغ البريدي"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_config_settings
+msgid "GDPR"
+msgstr "GDPR"
+
+#. module: sh_website_gdpr
+#: model:ir.model,name:sh_website_gdpr.model_sh_gdpr_data_category
+#: model:ir.model,name:sh_website_gdpr.model_sh_gdpr_data_request
+#: model:ir.ui.menu,name:sh_website_gdpr.sh_website_gdpr_category_menu
+msgid "GDPR Category"
+msgstr "GDPR الفئة"
+
+#. module: sh_website_gdpr
+#: model:ir.ui.menu,name:sh_website_gdpr.sh_website_gdpr_main_menu
+#: model:ir.ui.menu,name:sh_website_gdpr.sh_website_gdpr_menu
+#: model:res.groups,name:sh_website_gdpr.group_sh_website_gdpr_menu
+msgid "GDPR Data"
+msgstr "بيانات GDPR"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.category_my_category
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_category_portal_menu
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_category_portal_my_menu
+msgid "GDPR Data Category"
+msgstr "بيانات GDPR الفئة"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_portal_menu
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_portal_my_menu
+msgid "GDPR Data Request"
+msgstr "طلب بيانات GDPR"
+
+#. module: sh_website_gdpr
+#: model:ir.ui.menu,name:sh_website_gdpr.sh_website_gdpr_request_menu
+msgid "GDPR Request"
+msgstr "GDPR طلب"
+
+#. module: sh_website_gdpr
+#: model:ir.actions.report,name:sh_website_gdpr.action_report_gdpr_data_download
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_form
+msgid "Generate Data"
+msgstr "توليد البيانات"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_category_search
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_search
+msgid "Group By"
+msgstr "مجموعة من"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_res_config_settings__id
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_category__id
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__id
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_website_gdpr_cancel_reason_wizard__id
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_website__id
+msgid "ID"
+msgstr "هوية شخصية"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.category_my_category
+msgid "Image"
+msgstr "صورة"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_category__image_img
+msgid "Image Img"
+msgstr "صورة yourcolor.net و"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_category_search
+msgid "Inactive"
+msgstr "غير نشط"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_category____last_update
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request____last_update
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_website_gdpr_cancel_reason_wizard____last_update
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_website____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل ل"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_category__write_uid
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__write_uid
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_website_gdpr_cancel_reason_wizard__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_category__write_date
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__write_date
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_website_gdpr_cancel_reason_wizard__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث:"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.category_my_category
+msgid "Message"
+msgstr "رسالة"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__name
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.request_my_gdpr_request
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_report
+msgid "Name"
+msgstr "اسم"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields.selection,name:sh_website_gdpr.selection__sh_gdpr_data_request__state__pending
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_search
+msgid "Pending"
+msgstr "قيد الانتظار"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_report
+msgid "Phone"
+msgstr "هاتف"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_website_gdpr_cancel_reason_wizard__cancel_reason
+msgid "Reason"
+msgstr "السبب"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_category__redirect_url
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.category_my_category
+msgid "Redirect Url"
+msgstr "إعادة توجيه URL"
+
+#. module: sh_website_gdpr
+#: model:ir.model,name:sh_website_gdpr.model_sh_website_gdpr_cancel_reason_wizard
+msgid "Request Reason Wizard"
+msgstr "طلب السبب معالج"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__request_type
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.request_my_gdpr_request
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_search
+msgid "Request Type"
+msgstr "نوع الطلب"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.request_my_gdpr_request
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_portal_menu
+msgid "Requests"
+msgstr "طلبات"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_res_config_settings__user_ids
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_website__is_enable_email
+msgid "Responsible Person"
+msgstr "شخص مسؤول"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_category__description
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_category_form
+msgid "Short Description"
+msgstr "وصف قصير"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_report
+msgid "State"
+msgstr "حالة"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_search
+msgid "States"
+msgstr "تنص على"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__state
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.request_my_gdpr_request
+msgid "Status"
+msgstr "الحالة"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_report
+msgid "Street"
+msgstr "شارع"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_report
+msgid "Street 2"
+msgstr "شارع 2"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_cancel_reason_wizard_view
+msgid "Submit"
+msgstr "إرسال"
+
+#. module: sh_website_gdpr
+#: model:mail.template,subject:sh_website_gdpr.email_template_delete_customer
+#: model:mail.template,subject:sh_website_gdpr.email_template_delete_responsible_person
+#: model:mail.template,subject:sh_website_gdpr.email_template_delete_success
+#: model:mail.template,subject:sh_website_gdpr.email_template_download_customer
+#: model:mail.template,subject:sh_website_gdpr.email_template_download_responsible_person
+#: model:mail.template,subject:sh_website_gdpr.email_template_download_success
+msgid "Thanks for your request"
+msgstr "شكرا على طلبك"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.category_my_category
+msgid "There are currently no categories."
+msgstr "لا توجد فئات حاليا."
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.request_my_gdpr_request
+msgid "There are currently no requests."
+msgstr "لا يوجد حاليا أي طلبات."
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_category__name
+msgid "Title"
+msgstr "عنوان"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_category__type
+msgid "Type"
+msgstr "اكتب"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_cancel_reason_wizard_view
+msgid "Update Tags"
+msgstr "المستعمل"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_website__user_ids
+#: model:ir.model.fields.selection,name:sh_website_gdpr.selection__sh_gdpr_data_category__type__user
+msgid "User"
+msgstr "تفاصيل عنوان المستخدم"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_report
+msgid "User Address Details"
+msgstr "تفاصيل المستخدم الشخصية"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_report
+msgid "User Personal Details"
+msgstr "ضريبة"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_report
+msgid "VAT"
+msgstr "عرض طلب"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.category_my_category
+msgid "View Request"
+msgstr "موقع الكتروني"
+
+#. module: sh_website_gdpr
+#: model:ir.model,name:sh_website_gdpr.model_website
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_category__website_id
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__website_id
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_category_search
+msgid "Website"
+msgstr "بيانات جاهزة"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_form
+msgid "Wipe Data"
+msgstr "نعم أنا متأكد !"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.category_my_category
+msgid "Yes I'm sure !"
+msgstr "الرمز البريدي"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_report
+msgid "Zip"
+msgstr ""

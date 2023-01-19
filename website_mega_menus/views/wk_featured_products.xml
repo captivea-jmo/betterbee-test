@@ -1,0 +1,37 @@
+<odoo>
+  <data>
+    <record id="wk_featured_products_form" model="ir.ui.view">
+      <field name="name">Wk carousel</field>
+      <field name="model">wk.mega.menu.featured.products</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                <field name="name" required="True"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <field name="product_ids" widget="many2many_tags"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <record id="action_wk_featured_products" model="ir.actions.act_window">
+      <field name="name">Wk Carousel</field>
+      <field name="res_model">wk.mega.menu.featured.products</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Wk Product Carousel"
+      id="wk_featured_products"
+      action="action_wk_featured_products"
+      parent="website_mega_menus.root_wk_mega_menu"
+      groups="base.group_no_one"/>
+  </data>
+</odoo>

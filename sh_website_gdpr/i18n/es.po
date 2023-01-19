@@ -1,0 +1,644 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sh_website_gdpr
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-22 06:49+0000\n"
+"PO-Revision-Date: 2020-10-22 06:49+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.category_my_category
+msgid "&amp;times;"
+msgstr "&amp;veces;"
+
+#. module: sh_website_gdpr
+#: model:ir.actions.report,print_report_name:sh_website_gdpr.action_report_gdpr_data_download
+msgid "'GDPR Data - %s' % (object.name).replace('/', '')"
+msgstr "'datos GDPR - %s' % (object.name).replace('/', '')"
+
+#. module: sh_website_gdpr
+#: model:mail.template,body_html:sh_website_gdpr.email_template_download_success
+msgid ""
+"<div style=\"line-height: 28px;\">Hello <b>${object.partner_id.name}</b>,<br/>\n"
+"             You have requested information of <b>${object.data_categ_id.name}</b>.<br/>\n"
+"             We have provided information here.\n"
+"                    <br/>\n"
+"                    <a class=\"btn btn-primary\" role=\"button\" href=\"${object.env.context.get('customer_url')}\">Click here to check request</a>\n"
+"                    <br/>\n"
+"                    <div>Thank you</div>\n"
+"                </div>\n"
+"        "
+msgstr ""
+"<div style=\"line-height: 28px;\">Hola <b>${object.partner_id.name}</b>,<br/>\n"
+"             Ha solicitado información de <b>${object.data_categ_id.name}</b>.<br/>\n"
+"             Hemos proporcionado la información aquí.\n"
+"                    <br/>\n"
+"                    <a class=\"btn btn-primary\" role=\"button\" href=\"${object.env.context.get('customer_url')}\">Haga clic aquí para ver la solicitud</a>\n"
+"                    <br/>\n"
+"                    <div>Gracias</div>\n"
+"                </div>\n"
+"        "
+
+#. module: sh_website_gdpr
+#: model:mail.template,body_html:sh_website_gdpr.email_template_delete_success
+msgid ""
+"<div style=\"line-height: 28px;\">Hello <b>${object.partner_id.name}</b>,<br/>\n"
+"             You have requested to remove information of <b>${object.data_categ_id.name}</b>.<br/>\n"
+"             We have successfully removed information.\n"
+"                    <br/>\n"
+"                    <a class=\"btn btn-primary\" role=\"button\" href=\"${object.env.context.get('customer_url')}\">Click here to check request</a>\n"
+"                    <br/>\n"
+"                    <div>Thank you</div>\n"
+"                </div>\n"
+"        "
+msgstr ""
+"<div style=\"line-height: 28px;\">Hola <b>${object.partner_id.name}</b>,<br/>\n"
+"             Ha solicitado eliminar la información de <b>${object.data_categ_id.name}</b>.<br/>\n"
+"             Hemos eliminado con éxito la información.\n"
+"                    <br/>\n"
+"                    <a class=\"btn btn-primary\" role=\"button\" href=\"${object.env.context.get('customer_url')}\">Haga clic aquí para ver la solicitud</a>\n"
+"                    <br/>\n"
+"                    <div>Gracias</div>\n"
+"                </div>\n"
+"        "
+
+#. module: sh_website_gdpr
+#: model:mail.template,body_html:sh_website_gdpr.email_template_download_customer
+msgid ""
+"<div style=\"line-height: 28px;\">Hello <b>${object.partner_id.name}</b>,<br/>\n"
+"            You have requested to information of <b>${object.data_categ_id.name}</b>.<br/>\n"
+"             We will provide information as soon as possible.\n"
+"                    <br/>\n"
+"                    <a class=\"btn btn-primary\" role=\"button\" href=\"${object.env.context.get('customer_url')}\">Click here to check request</a>\n"
+"                    <br/>\n"
+"                    <div>Thank you</div>\n"
+"                </div>\n"
+"        "
+msgstr ""
+"<div style=\"line-height: 28px;\">Hello <b>${object.partner_id.name}</b>,<br/>\n"
+"            Ha solicitado a la información de <b>${object.data_categ_id.name}</b>.<br/>\n"
+"             Vamos a proporcionar información tan pronto como sea posible..\n"
+"                    <br/>\n"
+"                    <a class=\"btn btn-primary\" role=\"button\" href=\"${object.env.context.get('customer_url')}\">Click here to check request</a>\n"
+"                    <br/>\n"
+"                    <div>Gracias</div>\n"
+"                </div>\n"
+"        "
+
+#. module: sh_website_gdpr
+#: model:mail.template,body_html:sh_website_gdpr.email_template_delete_customer
+msgid ""
+"<div style=\"line-height: 28px;\">Hello <b>${object.partner_id.name}</b>,<br/>\n"
+"            You have requested to remove information of <b>${object.data_categ_id.name}</b>.<br/>\n"
+"             We will remove your information as soon as possible.\n"
+"                    <br/>\n"
+"                    <a class=\"btn btn-primary\" role=\"button\" href=\"${object.env.context.get('customer_url')}\">Click here to check request</a>\n"
+"                    <br/>\n"
+"                    <div>Thank you</div>\n"
+"                </div>\n"
+"        "
+msgstr ""
+"<div style=\"line-height: 28px;\">Hola <b>${object.partner_id.name}</b>,<br/>\n"
+"            Ha solicitado eliminar la información de <b>${object.data_categ_id.name}</b>.<br/>\n"
+"             Vamos a proporcionar información tan pronto como sea posible.\n"
+"                    <br/>\n"
+"                    <a class=\"btn btn-primary\" role=\"button\" href=\"${object.env.context.get('customer_url')}\">Click here to check request</a>\n"
+"                    <br/>\n"
+"                    <div>Gracias</div>\n"
+"                </div>\n"
+"        "
+
+
+#. module: sh_website_gdpr
+#: model:mail.template,body_html:sh_website_gdpr.email_template_download_responsible_person
+msgid ""
+"<div style=\"line-height: 28px;\">Hello There,<br/>\n"
+"            <b>${object.partner_id.name}</b> have requested information of <b>${object.data_categ_id.name}.</b>\n"
+"                    <br/>\n"
+"                    <a class=\"btn btn-primary\" role=\"button\" href=\"${object.env.context.get('customer_url')}\">Click here to check request</a>\n"
+"                    <br/>\n"
+"                    <div>Thank you</div>\n"
+"                </div>\n"
+"        "
+msgstr ""
+"<div style=\"line-height: 28px;\">Hola،<br/>\n"
+"            <b>${object.partner_id.name}</b> tener información solicitada <b>${object.data_categ_id.name}.</b>\n"
+"                    <br/>\n"
+"                    <a class=\"btn btn-primary\" role=\"button\" href=\"${object.env.context.get('customer_url')}\">Haga clic aquí para ver la solicitud</a>\n"
+"                    <br/>\n"
+"                    <div>Gracias</div>\n"
+"                </div>\n"
+"        "
+
+#. module: sh_website_gdpr
+#: model:mail.template,body_html:sh_website_gdpr.email_template_delete_responsible_person
+msgid ""
+"<div style=\"line-height: 28px;\">Hello There,<br/>\n"
+"            <b>${object.partner_id.name}</b> have requested to remove information of <b>${object.data_categ_id.name}.</b>\n"
+"                    <br/>\n"
+"                    <a class=\"btn btn-primary\" role=\"button\" href=\"${object.env.context.get('customer_url')}\">Click here to check request</a>\n"
+"                    <br/>\n"
+"                    <div>Thank you</div>\n"
+"                </div>\n"
+"        "
+msgstr ""
+"<div style=\"line-height: 28px;\">Hola،<br/>\n"
+"            <b>${object.partner_id.name}</b> han solicitado para eliminar la información de<b>${object.data_categ_id.name}.</b>\n"
+"                    <br/>\n"
+"                    <a class=\"btn btn-primary\" role=\"button\" href=\"${object.env.context.get('customer_url')}\">Haga clic aquí para ver la solicitud</a>\n"
+"                    <br/>\n"
+"                    <div>Gracias</div>\n"
+"                </div>\n"
+"        "
+
+
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.category_my_category
+msgid "<span class=\"alert_text\">Are You Sure !</span>"
+msgstr "<span class=\"alert_text\">Estás seguro !</span>"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.request_my_gdpr_request
+msgid ""
+"<span class=\"badge badge-pill badge-danger\"><i class=\"fa fa-trash "
+"badge_icon\"/><span>Cancel</span></span>"
+msgstr ""
+"<span class=\"badge badge-pill badge-danger\"><i class=\"fa fa-trash "
+"badge_icon\"/><span>Cancelar</span></span>"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.request_my_gdpr_request
+msgid ""
+"<span class=\"badge badge-pill badge-info\"><i class=\"fa fa-clock-o "
+"badge_icon\"/><span>Pending</span></span>"
+msgstr ""
+"<span class=\"badge badge-pill badge-info\"><i class=\"fa fa-clock-o "
+"badge_icon\"/><span>Pendiente</span></span>"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.request_my_gdpr_request
+msgid ""
+"<span class=\"badge badge-pill badge-success\"><i class=\"fa fa-check-"
+"circle-o badge_icon\"/><span>Done</span></span>"
+msgstr ""
+"<span class=\"badge badge-pill badge-success\"><i class=\"fa fa-check-"
+"circle-o badge_icon\"/><span>Hecho</span></span>"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.category_my_category
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.request_my_gdpr_request
+msgid "Action"
+msgstr "Acción"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_category__active
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_category_search
+msgid "Active"
+msgstr "Activo"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields.selection,name:sh_website_gdpr.selection__sh_gdpr_data_category__type__address
+msgid "Address"
+msgstr "Habla a"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__attachment
+msgid "Attachments"
+msgstr "Archivos adjuntos"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields.selection,name:sh_website_gdpr.selection__sh_gdpr_data_request__state__cancel
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_cancel_reason_wizard_view
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_form
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_search
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: sh_website_gdpr
+#: model:ir.actions.act_window,name:sh_website_gdpr.sh_website_gdpr_cancel_reason_wizard_action
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__cancel_reason
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.request_my_gdpr_request
+msgid "Cancel Reason"
+msgstr "Cancelar Razón"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_category_portal_menu
+msgid "Category"
+msgstr "Categoría"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_report
+msgid "City"
+msgstr "Ciudad"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_category__company_id
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__company_id
+msgid "Company"
+msgstr "Empresa"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_report
+msgid "Company Name"
+msgstr "nombre de empresa"
+
+#. module: sh_website_gdpr
+#: model:ir.model,name:sh_website_gdpr.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de Configuración"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_report
+msgid "Country"
+msgstr "País"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_category_search
+msgid "Create Date"
+msgstr "Fecha de Creación"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_category_search
+msgid "Created On"
+msgstr "Creado en"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_category__create_uid
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__create_uid
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_website_gdpr_cancel_reason_wizard__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_category__create_date
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__create_date
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_website_gdpr_cancel_reason_wizard__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__partner_id
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_website__is_customer
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.request_my_gdpr_request
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_search
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__data_categ_id
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.request_my_gdpr_request
+msgid "Data Category"
+msgstr "Categoría de datos"
+
+#. module: sh_website_gdpr
+#: model:ir.actions.act_window,name:sh_website_gdpr.sh_website_gdpr_category_action
+msgid "Data GDPR Category"
+msgstr "Datos GDPR Categoría"
+
+#. module: sh_website_gdpr
+#: model:ir.actions.act_window,name:sh_website_gdpr.sh_website_gdpr_request_action
+msgid "Data GDPR Request"
+msgstr "Solicitud de datos GDPR"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__data_wiped
+msgid "Data Wiped"
+msgstr "Se limpió los datos"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields.selection,name:sh_website_gdpr.selection__sh_gdpr_data_request__request_type__delete
+msgid "Delete"
+msgstr "Eliminar"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_category__display_name
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__display_name
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_website_gdpr_cancel_reason_wizard__display_name
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_website__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields.selection,name:sh_website_gdpr.selection__sh_gdpr_data_request__state__done
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_form
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_search
+msgid "Done"
+msgstr "Hecho"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields.selection,name:sh_website_gdpr.selection__sh_gdpr_data_request__request_type__download
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.request_my_gdpr_request
+msgid "Download"
+msgstr "Descargar"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.request_my_gdpr_request
+msgid "Download Content"
+msgstr "Descargar contenido"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_report
+msgid "Email"
+msgstr "Email"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_res_config_settings__is_customer
+msgid "Enable Customer Email Notification"
+msgstr "Permitir que el Cliente notificación por correo electrónico"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_res_config_settings__is_enable_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_website__is_enable_gdpr
+msgid "Enable GDPR"
+msgstr "Habilitar GDPR"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_res_config_settings__is_enable_email
+msgid "Enable Responsible Person Email Notification"
+msgstr "Habilitar notificación por correo electrónico persona responsable"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_config_settings
+msgid "GDPR"
+msgstr "GDPR"
+
+#. module: sh_website_gdpr
+#: model:ir.model,name:sh_website_gdpr.model_sh_gdpr_data_category
+#: model:ir.model,name:sh_website_gdpr.model_sh_gdpr_data_request
+#: model:ir.ui.menu,name:sh_website_gdpr.sh_website_gdpr_category_menu
+msgid "GDPR Category"
+msgstr "GDPR Categoría"
+
+#. module: sh_website_gdpr
+#: model:ir.ui.menu,name:sh_website_gdpr.sh_website_gdpr_main_menu
+#: model:ir.ui.menu,name:sh_website_gdpr.sh_website_gdpr_menu
+#: model:res.groups,name:sh_website_gdpr.group_sh_website_gdpr_menu
+msgid "GDPR Data"
+msgstr "datos GDPR"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.category_my_category
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_category_portal_menu
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_category_portal_my_menu
+msgid "GDPR Data Category"
+msgstr "Categoría GDPR Datos"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_portal_menu
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_portal_my_menu
+msgid "GDPR Data Request"
+msgstr "Solicitud de datos GDPR"
+
+#. module: sh_website_gdpr
+#: model:ir.ui.menu,name:sh_website_gdpr.sh_website_gdpr_request_menu
+msgid "GDPR Request"
+msgstr "Solicitud GDPR"
+
+#. module: sh_website_gdpr
+#: model:ir.actions.report,name:sh_website_gdpr.action_report_gdpr_data_download
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_form
+msgid "Generate Data"
+msgstr "generar datos"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_category_search
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_res_config_settings__id
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_category__id
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__id
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_website_gdpr_cancel_reason_wizard__id
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_website__id
+msgid "ID"
+msgstr "CARNÉ DE IDENTIDAD"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.category_my_category
+msgid "Image"
+msgstr "Imagen"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_category__image_img
+msgid "Image Img"
+msgstr "Img imagen"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_category_search
+msgid "Inactive"
+msgstr "Inactivo"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_category____last_update
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request____last_update
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_website_gdpr_cancel_reason_wizard____last_update
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_website____last_update
+msgid "Last Modified on"
+msgstr "Modificada por última vez"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_category__write_uid
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__write_uid
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_website_gdpr_cancel_reason_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización realizada por"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_category__write_date
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__write_date
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_website_gdpr_cancel_reason_wizard__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización en"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.category_my_category
+msgid "Message"
+msgstr "Mensaje"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__name
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.request_my_gdpr_request
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_report
+msgid "Name"
+msgstr "Nombre"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields.selection,name:sh_website_gdpr.selection__sh_gdpr_data_request__state__pending
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_search
+msgid "Pending"
+msgstr "Pendiente"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_report
+msgid "Phone"
+msgstr "Teléfono"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_website_gdpr_cancel_reason_wizard__cancel_reason
+msgid "Reason"
+msgstr "Razón"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_category__redirect_url
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.category_my_category
+msgid "Redirect Url"
+msgstr "Redireccionar URL"
+
+#. module: sh_website_gdpr
+#: model:ir.model,name:sh_website_gdpr.model_sh_website_gdpr_cancel_reason_wizard
+msgid "Request Reason Wizard"
+msgstr "Solicitud Asistente Razón"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__request_type
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.request_my_gdpr_request
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_search
+msgid "Request Type"
+msgstr "tipo de solicitud"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.request_my_gdpr_request
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_portal_menu
+msgid "Requests"
+msgstr "Peticiones"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_res_config_settings__user_ids
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_website__is_enable_email
+msgid "Responsible Person"
+msgstr "Persona responsable"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_category__description
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_category_form
+msgid "Short Description"
+msgstr "Breve descripción"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_report
+msgid "State"
+msgstr "Estado"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_search
+msgid "States"
+msgstr "Unidos"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__state
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.request_my_gdpr_request
+msgid "Status"
+msgstr "Estado"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_report
+msgid "Street"
+msgstr "Calle"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_report
+msgid "Street 2"
+msgstr "Calle # 2"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_cancel_reason_wizard_view
+msgid "Submit"
+msgstr "Enviar"
+
+#. module: sh_website_gdpr
+#: model:mail.template,subject:sh_website_gdpr.email_template_delete_customer
+#: model:mail.template,subject:sh_website_gdpr.email_template_delete_responsible_person
+#: model:mail.template,subject:sh_website_gdpr.email_template_delete_success
+#: model:mail.template,subject:sh_website_gdpr.email_template_download_customer
+#: model:mail.template,subject:sh_website_gdpr.email_template_download_responsible_person
+#: model:mail.template,subject:sh_website_gdpr.email_template_download_success
+msgid "Thanks for your request"
+msgstr "Gracias por su solicitud"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.category_my_category
+msgid "There are currently no categories."
+msgstr "Actualmente no hay categorías."
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.request_my_gdpr_request
+msgid "There are currently no requests."
+msgstr "Actualmente no hay peticiones."
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_category__name
+msgid "Title"
+msgstr "Título"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_category__type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_cancel_reason_wizard_view
+msgid "Update Tags"
+msgstr "Usuario"
+
+#. module: sh_website_gdpr
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_website__user_ids
+#: model:ir.model.fields.selection,name:sh_website_gdpr.selection__sh_gdpr_data_category__type__user
+msgid "User"
+msgstr "Detalles de la dirección del usuario"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_report
+msgid "User Address Details"
+msgstr "Detalles de la dirección del usuario"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_report
+msgid "User Personal Details"
+msgstr "Usuario Datos Personales"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_report
+msgid "VAT"
+msgstr "IVA"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.category_my_category
+msgid "View Request"
+msgstr "Ver Solicitud"
+
+#. module: sh_website_gdpr
+#: model:ir.model,name:sh_website_gdpr.model_website
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_category__website_id
+#: model:ir.model.fields,field_description:sh_website_gdpr.field_sh_gdpr_data_request__website_id
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_category_search
+msgid "Website"
+msgstr "Sitio web"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_form
+msgid "Wipe Data"
+msgstr "Borrar información"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.category_my_category
+msgid "Yes I'm sure !"
+msgstr "Sí estoy seguro !"
+
+#. module: sh_website_gdpr
+#: model_terms:ir.ui.view,arch_db:sh_website_gdpr.sh_website_gdpr_request_report
+msgid "Zip"
+msgstr "Código Postal"

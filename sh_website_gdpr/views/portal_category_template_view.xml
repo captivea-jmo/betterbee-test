@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="assets_frontend_inherit_visitor_last" inherit_id="portal.assets_frontend" name="Category frontend assets">
+        <xpath expr="//script[last()]" position="after">
+            <script type="text/javascript" src="/sh_website_gdpr/static/src/js/script.js"></script>
+        </xpath>
+    </template>
+
+    <template id="sh_website_gdpr_category_portal_menu" name="Portal layout : Category menu entries" inherit_id="portal.portal_breadcrumbs" priority="21">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name == 'category' or category" t-attf-class="breadcrumb-item #{'active' if not category else ''}">
+                <a t-if="category" t-attf-href="/my/category?{{ keep_query() }}">Category</a>
+                <t t-else="">GDPR Data Category</t>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="sh_website_gdpr_category_portal_my_menu" name="Portal My Home : Category entries" inherit_id="portal.portal_my_home" priority="21">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-if="website.is_enable_gdpr" t-call="portal.portal_docs_entry">
+                <t t-set="title">GDPR Data Category</t>
+                <t t-set="url" t-value="'/my/category'" />
+                <t t-set="count" t-value="category_count" />
+            </t>
+        </xpath>
+    </template>
+
+    <template id="category_my_category" name="My Categories">
+        <t t-call="portal.portal_layout">
+            <style>
+                button {
+                    outline: none;
+                    box-shadow: none;
+                    border-radius: 3px;
+                    background: #fff;
+                    border: none;
+                    padding: 0;
+                }
+                button:focus {
+                    border: none;
+                    outline: none;
+                    box-shadow: none;
+                }
+                .fa-download {
+                    border: 1px #2962ff solid;
+                    padding: 7px 7px;
+                    border-radius: 50%;
+                    color: #2962ff;
+                    font-size: 14px;
+                    transition: 0.4s;
+                }
+                .fa-download:hover {
+                    border: 1px #2962ff solid;
+                    background: #2962ff;
+                    color: #fff;
+                    transition: 0.4s;
+                }
+                .fa-trash {
+                    border: 1px #b71c1c solid;
+                    padding: 7px 8px;
+                    border-radius: 50%;
+                    color: #b71c1c;
+                    font-size: 14px;
+                    transition: 0.4s;
+                }
+                .fa-trash:hover {
+                    border: 1px #b71c1c solid;
+                    background: #b71c1c;
+                    color: #fff;
+                    transition: 0.4s;
+                }
+            </style>
+
+            <t t-set="breadcrumbs_searchbar" t-value="True" />
+
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">GDPR Data Category</t>
+            </t>
+
+            <t t-call="portal.portal_table">
+                <thead>
+                    <tr>
+                        <th style="text-align: center;">Image</th>
+                        <th style="text-align: center;">Redirect Url</th>
+                        <th style="text-align: center;">Action</th>
+                    </tr>
+                </thead>
+                <t t-foreach="categories" t-as="categ">
+                    <tr>
+                        <td style="text-align: center; padding-bottom: 0;">
+                            <img t-att-src="'/web/image/sh.gdpr.data.category/%s/image_img' % categ.id" width="100px" height="80px" />
+                        </td>
+                        <td style="text-align: center; padding-bottom: 0;">
+                            <a value="link" t-att-href="categ.redirect_url"><t t-esc="categ.name" /></a><br />
+                            <span t-field="categ.type" />
+                        </td>
+                        <td style="text-align: center; padding-bottom: 0;">
+                            <input type="hidden" id="category_id" name="category_id" t-att-value="categ.id" />
+                            <button class="download_btn" style="margin-right: 5px;"><i class="fa fa-download"></i></button>
+                            <button class="delete_btn"><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                </t>
+            </t>
+            <t t-if="not categories">
+                <div class="alert" role="alert" style="padding: 10px;">
+                    There are currently no categories.
+                </div>
+            </t>
+        </t>
+        <div class="container">
+            <div class="modal fade alert_message">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <input type="hidden" name="popup_cat_id" id="popup_cat_id" />
+                        <div class="modal-header">
+                            <h4 class="modal-title">Message</h4>
+                            <button type="button" class="close" data-dismiss="modal">&amp;times;</button>
+                        </div>
+
+                        <div class="modal-body">
+                            <span class="alert_text">Are You Sure !</span>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary sure_btn">Yes I'm sure !</button>
+                            <button type="button" class="btn btn-secondary" id="view_btn">View Request</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+</odoo>

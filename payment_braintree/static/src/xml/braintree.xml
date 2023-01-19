@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="braintree" xml:space="preserve">
+    <t t-name="payment_braintree.dropin_ui">
+        <div class="modal" tabindex="-1" role="dialog" id="braintree_dropin_modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Braintree Payment</h4>
+                    </div>
+                    <div class="modal-body">
+                        <t t-if="brt_version=='old'">
+                            <form method="post" action="/">
+                                <div id="braintree-dropin-ui"></div>
+                                <button type="submit" id="braintree-pay-btn" class="btn btn-primary btn-lg btn-block disabled">Loading...</button>
+                            </form>
+                        </t>
+                        <t t-else="">
+                            <div id="braintree-dropin-ui"></div>
+                            <button id="braintree-pay-btn" class="btn btn-primary btn-lg btn-block disabled" type="button">Loading...</button>
+                        </t>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="payment_braintree.enable_text">
+        <span>
+            <strong>Pay Now (<t t-esc="price_text"/>)</strong>
+        </span>
+    </t>
+
+    <t t-name="payment_braintree.disable_text">
+        <span>
+            Processing... <i class="fa fa-spinner fa-spin"/> (<t t-esc="price_text"/>)
+        </span>
+    </t>
+
+    <t t-name="payment_braintree.payload_data">
+        <input type="hidden" name="payment_method_nonce" t-att-value="payload.nonce" />
+        <input type="hidden" name="liability_shifted" t-att-value="payload.liabilityShifted" />
+        <input type="hidden" name="liability_shift_possible" t-att-value="payload.liabilityShiftPossible" />
+        <input type="hidden" name="merchant_account_id" t-att-value="merchant_account_id" />
+    </t>
+</templates>

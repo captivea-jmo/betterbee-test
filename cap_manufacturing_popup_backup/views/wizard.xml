@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="wizard_popup_view_form" model="ir.ui.view">
+            <field name="name">mrp.wizard.form</field>
+            <field name="model">mrp.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Processed products">
+                    <field name="name"/>
+                    <field name="processed_mo"/>
+                    <field name="product_ids" invisible="1"/>
+                    <br/>
+                    Select the primary output : <field name="primary_output" />
+                    <br/>
+                    Select the secondary output : <field name="secondary_output" />
+                    
+<!--                     <field name="name"></field>
+                    <field name="processed_mo"/>
+                    Select a product :<field name="product_selection"/>
+                    Enter a quantity :<field name="product_quantity"/>
+                    <button type="object" name="addProductToList" string="Add product" class="btn btn-primary"></button>
+                    <button style='margin-left:5px;' type="object" name="resetToPossibleOutcome" string="Reset list to Possible Outcomes" class="btn btn-primary"></button>
+                <br />
+                    <field name="product_ids">
+                        <tree nolabel="1" editable="top" options="'no_open': True">
+                          <field name="product_id" readonly="1"/>
+                          <field name="quantity"/>
+                        </tree>
+                    </field> -->
+                </form>
+                <!-- If an error appears when installing this module, comment the footer, install, uncomment and upgrade, it'll allow it -->
+                <footer>
+                    <button type="object" name="turnProcessedIntoProductsStep1" string="Finish production" class="btn btn-primary"></button>
+                </footer>
+            </field>
+        </record>
+        
+<!--         <record id="wizard_popup_view_form" model="ir.ui.view">
+            <field name="name">mrp.wizard.form</field>
+            <field name="model">mrp.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Processed products">
+                    <field name="name"></field>
+                    <field name="processed_mo"/>
+                    Select a product :<field name="product_selection"/>
+                    Enter a quantity :<field name="product_quantity"/>
+                    <button type="object" name="addProductToList" string="Add product" class="btn btn-primary"></button>
+                    <button style='margin-left:5px;' type="object" name="resetToPossibleOutcome" string="Reset list to Possible Outcomes" class="btn btn-primary"></button>
+                <br />
+                    <field name="product_ids">
+                        <tree nolabel="1" editable="top" options="'no_open': True">
+                          <field name="product_id" readonly="1"/>
+                          <field name="quantity"/>
+                        </tree>
+                    </field>
+                </form> -->
+                <!-- If an error appears when installing this module, comment the footer, install, uncomment and upgrade, it'll allow it -->
+<!--                 <footer>
+                    <button type="object" name="turnProcessedIntoProducts" confirm="Did you declare the correct product amount?" string="Finish production" class="btn btn-primary"></button>
+                </footer>
+            </field>
+        </record> -->
+
+
+        <record id="wizard_popup_error_form" model="ir.ui.view">
+            <field name="name">wizard.popup.error.form</field>
+            <field name="model">popup.error</field>
+            <field name="arch" type="xml">
+                <form string="Error">
+                    <field name="text"></field>
+                </form>
+                <footer>
+                    <button type="object" name="addScrap" string="Add as Scrap" class="btn btn-primary"></button>
+                    <button type="object" name="goBack" string="Go back" class="btn btn-secondary"></button>
+                </footer>
+            </field>
+        </record>
+
+    </data>
+</odoo>

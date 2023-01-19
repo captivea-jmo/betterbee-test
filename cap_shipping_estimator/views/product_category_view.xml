@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="inherit_product_category_form_view" model="ir.ui.view">
+        <field name="name">inherit.product.category.form.view</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="product.product_category_form_view"/>
+        <field name="arch" type="xml">
+            <field name="parent_id" position="after">
+                <field name="delivery_carrier_ids">
+                    <tree create="0" delete="0" edit="0">
+                        <field name="name"/>
+                        <field name="delivery_type"/>
+                    </tree>
+                </field>
+            </field>
+        </field>
+    </record>
+</odoo>

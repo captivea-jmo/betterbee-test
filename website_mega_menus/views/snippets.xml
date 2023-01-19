@@ -1,0 +1,668 @@
+<odoo>
+  <data>
+
+    <template id="categories_temp" name="Category Holder">
+      <div t-attf-class="col-md#{col_size} cat_main cat_main_temp">
+				<strong>
+          <span class="mega_cat_image mega_cat_image_temp">
+            <img src="/website_mega_menus/static/src/img/mm5.jpg" class="img img-fluid"/>
+          </span>
+					<a class="nav-link" href="#">
+            Menu 1
+					</a>
+				</strong>
+				<div class="child_categories child_cat_temp">
+					<t t-foreach="range(4)" t-as="c1">
+						<t t-set="level" t-value="0"/>
+            <div class="levelclass lvl_temp" t-att-level="level">
+      				<a href="#">
+      					Menu
+      				</a>
+              <!-- <span class="fa fa-caret-right"/> -->
+      			</div>
+					</t>
+				</div>
+			</div>
+    </template>
+
+    <template id="categories_recursive_child" name="Category Child list">
+      <!-- <style>
+        .levelclass:hover > a{color: body_hover_color !important;}
+      </style> -->
+			<div class="levelclass" t-att-level="level">
+				<span class="bullet-point fa fa-angle-double-right"></span>
+				<a t-attf-href="/shop/category/#{slug(c1)}" t-attf-style="color:##{body_color or '212121'}" t-attf-target="#{'_blank' if new_window else ''}">
+					<t t-esc="c1.name"/>
+				</a>
+        <t t-if="c1.child_id">
+          <span class="fa fa-caret-right"/>
+          <t t-set="level" t-value="level+1"/>
+          <div class="grand_child">
+            <t t-foreach="c1.child_id" t-as="c2">
+              <t t-set="c1" t-value="c2"/>
+              <t t-call="website_mega_menus.categories_recursive_child"/>
+            </t>
+          </div>
+        </t>
+			</div>
+		</template>
+
+		<template id="categories_recursive" name="Category list">
+			<div t-attf-class="col-md#{col_size} cat_main">
+				<strong>
+					<span t-if="c.image_512" t-field="c.image_512" class="mega_cat_image" t-options="{'widget': 'image'}"></span>
+					<a class="nav-link" t-attf-href="/shop/category/#{slug(c)}" t-attf-style="color:##{root_color or '212121'}" t-attf-target="#{'_blank' if new_window else ''}"><t t-esc="c.name"/>
+            <span class="fa fa-caret-right"/>
+					</a>
+				</strong>
+				<div t-if="c.child_id" class="child_categories">
+					<t t-foreach="c.child_id" t-as="c1">
+						<t t-set="level" t-value="0"/>
+						<t t-call="website_mega_menus.categories_recursive_child"/>
+					</t>
+				</div>
+			</div>
+		</template>
+
+    <template id="wk_product_card" name="Product Card">
+      <t t-if="product">
+        <t t-set="product_href" t-value="product.website_url" />
+        <t t-set="combination_info" t-value="product._get_combination_info(only_template=True, add_qty=add_qty or 1, pricelist=pricelist)"/>
+        <div class="card">
+          <a t-att-href="product_href" class="d-block" itemprop="url">
+            <span t-field="product.image_1920"
+              t-options="{'widget': 'image', 'preview_image': 'image_1024' if product_image_big else 'image_256'}"
+              class="d-flex h-100 justify-content-center align-items-center"/>
+          </a>
+          <div class="card-body">
+            <div class="o_wsale_product_information_text">
+              <h6 class="o_wsale_products_item_title">
+                <a itemprop="name" t-att-href="product_href" t-att-content="product.name" t-field="product.name" />
+                <a role="button" t-if="not product.website_published" t-att-href="product_href" class="btn btn-sm btn-danger" title="This product is unpublished.">Unpublished</a>
+              </h6>
+              <div class="product_price" itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer">
+                <!-- <t t-esc="website.read()"/> -->
+                <!-- <t t-esc="website.currency_id"/> -->
+                <del t-attf-class="text-danger mr-2 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;" t-esc="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.company_id.currency_id}" />
+                <span t-if="combination_info['price']" t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.company_id.currency_id}"/>
+                <!-- <span>$</span><span t-if="combination_info['price']" t-esc="combination_info['price']"/> -->
+                <span itemprop="price" style="display:none;" t-esc="combination_info['price']" />
+                <span itemprop="priceCurrency" style="display:none;" t-esc="website.company_id.currency_id.name" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </t>
+
+      <t t-else="">
+        <div class="card">
+          <a href="/" class="d-block" itemprop="url">
+            <span class="d-flex h-100 justify-content-center align-items-center">
+              <img src="/website_mega_menus/static/src/img/img-1-mega-menu-1.png" class="img img-fluid"/>
+            </span>
+          </a>
+          <div class="card-body">
+            <div class="o_wsale_product_information_text">
+              <h6 class="o_wsale_products_item_title">
+                <a href="#">Product Name</a>
+              </h6>
+              <div class="product_price">
+                <span>$450.00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </t>
+    </template>
+
+    <template id="wk_carousel_main" name="Wk Carousel">
+      <div class="row">
+        <div class="col-8" style="align-self: flex-end;">
+          <h3 style="text-align: left !important"><t t-esc="carousel_heading"/></h3>
+        </div>
+        <div class="col-4">
+          <div class="owl-theme">
+            <div class="owl-controls ">
+              <div class="owl-nav mega_menu_nav"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="owl-mega_menu owl-carousel owl-theme">
+        <t t-foreach="products" t-as="product">
+          <t t-call="website_mega_menus.wk_product_card"/>
+        </t>
+      </div>
+    </template>
+
+
+    <template id="mega_menu_snippet_1" name="Mega-Menu Snippet 1">
+
+      <section class="mega_menu_snippet_1">
+        <t t-if="categories">
+          <div class="row m-0" t-attf-style="background-color:##{body_bg or 'unset'};color:##{body_color or '212121'}">
+            <t t-foreach="categories" t-as="c">
+              <t t-call="website_mega_menus.categories_recursive">
+                <t t-set="col_size" t-value=""/>
+              </t>
+            </t>
+          </div>
+        </t>
+
+        <t t-else="">
+          <div class="row m-0 row_temp">
+            <t t-foreach="range(6)" t-as="c">
+              <t t-call="website_mega_menus.categories_temp">
+                <t t-set="col_size" t-value="-2"/>
+              </t>
+            </t>
+          </div>
+        </t>
+      </section>
+    </template>
+
+    <template id="mega_menu_snippet_2" name="Mega-Menu snippet 2">
+      <section class="mega_menu_snippet_2">
+        <t t-if="categories">
+          <t t-set="url" t-value="none"/>
+          <div class="container" t-attf-style="background-color:##{body_bg or 'unset'};color:##{body_color or '212121'}">
+            <div class="row main_body">
+              <div class="col-md-6 categories">
+                <div class="row cat_row">
+                  <t t-foreach="categories" t-as="c">
+                    <t t-call="website_mega_menus.categories_recursive">
+                      <t t-set="col_size" t-value="-4"/>
+                    </t>
+                  </t>
+                </div>
+              </div>
+              <div class="col-md-6 carousel_col">
+                <t t-call="website_mega_menus.wk_carousel_main">
+                  <t t-set="products" t-value="carousel_products"/>
+                  <t t-set="heading" t-value="carousel_heading"/>
+                  <t t-set="website" t-value="website_id"/>
+                </t>
+              </div>
+            </div>
+          </div>
+        </t>
+        <t t-else="">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="row">
+                  <t t-foreach="range(3)" t-as="menu_title">
+                    <t t-call="website_mega_menus.categories_temp">
+                      <t t-set="col_size" t-value="-4"/>
+                    </t>
+                  </t>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-8" style="align-self: flex-end;">
+                    <h3 style="text-align: left !important">TOP PRODUCTS</h3>
+                  </div>
+                  <div class="col-4">
+                    <div class="owl-theme">
+                      <div class="owl-controls ">
+                        <div class="owl-nav mega_menu_nav"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="owl-mega_menu owl-carousel owl-theme">
+                    <t t-foreach="range(7)" t-as="mega_menu">
+                      <t t-call="website_mega_menus.wk_product_card"/>
+                    </t>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </t>
+      </section>
+    </template>
+
+    <template id="mega_menu_snippet_3" name="Mega-Menu snippet 3">
+      <section class="mega_menu_snippet_3">
+        <t t-if="categories">
+          <!-- <t t-set="url" t-value="none"/> -->
+          <div class="container" t-attf-style="background-color:##{body_bg or 'unset'};color:##{body_color or '212121'}">
+            <div class="row main_body">
+              <div class="col-md-4 categories">
+                <div class="heading">
+                  SHOP BY
+                </div>
+                <div class="ul">
+                  <t t-foreach="categories" t-as="c">
+                    <t t-call="website_mega_menus.categories_recursive"/>
+                  </t>
+                </div>
+              </div>
+              <div class="col-md-8 featured_prod_col">
+                <div class="row featured_products">
+                  <t t-set="i" t-value="1"/>
+                  <t t-foreach="carousel_products" t-as="product">
+                    <t t-if="4 >= i">
+                      <div class="col-md-3 cat_products">
+                        <t t-set="website" t-value="website_id"/>
+                        <t t-call="website_mega_menus.wk_product_card"/>
+                        <t t-set="i" t-value="i+1"/>
+                      </div>
+                    </t>
+                  </t>
+                </div>
+              </div>
+            </div>
+          </div>
+        </t>
+        <t t-else="">
+          <div class="container" t-attf-style="background-color:##{body_bg or 'unset'};color:##{body_color or '212121'}">
+            <div class="row main_body">
+              <div class="col-md-4 categories">
+                <div class="heading">
+                  SHOP BY
+                </div>
+                <div class="ul">
+                  <t t-foreach="range(7)" t-as="c">
+                    <t t-call="website_mega_menus.categories_temp">
+                      <t t-set="col_size" t-value=""/>
+                    </t>
+                  </t>
+                </div>
+              </div>
+              <div class="col-md-8 featured_prod_col featured_prod_col_temp">
+                <div class="row featured_products">
+                  <t t-set="i" t-value="1"/>
+                  <t t-foreach="range(4)" t-as="c">
+                    <t t-if="4 >= i">
+                      <div class="col-md-3 cat_products">
+                        <t t-call="website_mega_menus.wk_product_card"/>
+                      </div>
+                    </t>
+                  </t>
+                </div>
+              </div>
+            </div>
+          </div>
+        </t>
+      </section>
+    </template>
+
+
+    <template id="mega_menu_snippet_4" name="Mega-Menu snippet 4">
+      <section class="mega_menu_snippet_4">
+        <t t-if="categories">
+          <div class="row main_body" t-attf-style="background-color:##{body_bg or 'unset'};color:##{body_color or '212121'}">
+            <div class="col-md-9 categories">
+              <t t-foreach="categories" t-as="c">
+                <t t-call="website_mega_menus.categories_recursive">
+                  <t t-set="col_size" t-value="-4"/>
+                </t>
+              </t>
+            </div>
+            <div class="col-md-3 offer_img">
+              <img src="/website_mega_menus/static/src/img/cl2.jpg"/>
+              <div class="img-overlay">
+                <div class="headings">
+                  <h4 class="heading_1">SALE</h4>
+                  <h2 class="heading_2">50% Off</h2>
+                </div>
+                <button type="button" class="btn btn-warning">Shop</button>
+              </div>
+            </div>
+          </div>
+        </t>
+        <t t-else="">
+          <div class="row main_body">
+            <div class="col-md-9 categories">
+              <t t-foreach="range(3)" t-as="menu_title">
+                <t t-call="website_mega_menus.categories_temp">
+                  <t t-set="col_size" t-value="-4"/>
+                </t>
+              </t>
+            </div>
+            <div class="col-md-3 offer_img">
+              <img src="/website_mega_menus/static/src/img/cl2.jpg"/>
+              <div class="img-overlay">
+                <div class="headings">
+                  <h4 class="heading_1">SALE</h4>
+                  <h2 class="heading_2">50% Off</h2>
+                </div>
+                <button type="button" class="btn btn-warning">Shop</button>
+              </div>
+            </div>
+          </div>
+        </t>
+      </section>
+    </template>
+
+    <template id="mega_menu_snippet_5" name="Mega-Menu snippet 5">
+      <section class="mega_menu_snippet_5">
+        <t t-if="categories">
+          <t t-set="url" t-value="none"/>
+          <div class="container" t-attf-style="background-color:##{body_bg or 'unset'};color:##{body_color or '212121'}">
+            <div class="row main_body">
+              <div class="col-md-6 categories">
+                <div class="row cat_row">
+                  <t t-foreach="categories" t-as="c">
+                    <t t-call="website_mega_menus.categories_recursive">
+                      <t t-set="col_size" t-value="-4"/>
+                    </t>
+                  </t>
+                </div>
+              </div>
+              <div class="col-md-6 carousel_col">
+                <t t-call="website_mega_menus.wk_carousel_main">
+                  <t t-set="products" t-value="carousel_products"/>
+                  <t t-set="heading" t-value="carousel_heading"/>
+                  <t t-set="website" t-value="website_id"/>
+                </t>
+              </div>
+            </div>
+          </div>
+        </t>
+        <t t-else="">
+          <div class="container">
+            <div class="row main_body">
+              <div class="col-md-6 categories">
+                <div class="row cat_row">
+                  <t t-foreach="range(3)" t-as="menu_title">
+                    <t t-call="website_mega_menus.categories_temp">
+                      <t t-set="col_size" t-value="-4"/>
+                    </t>
+                  </t>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-8" style="align-self: flex-end;">
+                    <h3 style="text-align: left !important">TOP PRODUCTS</h3>
+                  </div>
+                  <div class="col-4">
+                    <div class="owl-theme">
+                      <div class="owl-controls ">
+                        <div class="owl-nav mega_menu_nav"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="owl-mega_menu owl-carousel owl-theme">
+                    <t t-foreach="range(7)" t-as="mega_menu">
+                      <t t-call="website_mega_menus.wk_product_card"/>
+                    </t>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </t>
+      </section>
+    </template>
+
+    <template id="mega_menu_snippet_6" name="Mega-Menu snippet 6">
+      <section class="mega_menu_snippet_6">
+        <t t-if="categories">
+          <div class="row main_body" t-attf-style="background-color:##{body_bg or 'unset'};color:##{body_color or '212121'}">
+            <div class="col-md-9 categories">
+              <t t-foreach="categories" t-as="c">
+                <t t-call="website_mega_menus.categories_recursive">
+                  <t t-set="col_size" t-value="-4"/>
+                </t>
+              </t>
+            </div>
+            <div class="col-md-3 offer_img">
+              <img src="/website_mega_menus/static/src/img/cl2.jpg"/>
+              <div class="img-overlay">
+                <div class="headings">
+                  <h4 class="heading_1">SALE</h4>
+                  <h2 class="heading_2">50% Off</h2>
+                </div>
+                <button type="button" class="btn btn-warning">Shop</button>
+              </div>
+            </div>
+          </div>
+        </t>
+        <t t-else="">
+          <div class="row main_body">
+            <div class="col-md-9 categories">
+              <t t-foreach="range(3)" t-as="menu_title">
+                <t t-call="website_mega_menus.categories_temp">
+                  <t t-set="col_size" t-value="-4"/>
+                </t>
+              </t>
+            </div>
+            <div class="col-md-3 offer_img">
+              <img src="/website_mega_menus/static/src/img/cl2.jpg"/>
+              <div class="img-overlay">
+                <div class="headings">
+                  <h4 class="heading_1">SALE</h4>
+                  <h2 class="heading_2">50% Off</h2>
+                </div>
+                <button type="button" class="btn btn-warning">Shop</button>
+              </div>
+            </div>
+          </div>
+        </t>
+      </section>
+    </template>
+
+    <template id="mega_menu_snippet_7" name="Mega-Menu snippet 7">
+      <section class="mega_menu_snippet_7">
+        <t t-if="categories">
+          <div class="row main_body" t-attf-style="background-color:##{body_bg or 'unset'};color:##{body_color or '212121'}">
+            <div class="col-md-3 offer_img">
+              <img src="/website_mega_menus/static/src/img/cl2.jpg"/>
+              <div class="img-overlay">
+                <div class="headings">
+                  <h4 class="heading_1">SALE</h4>
+                  <h2 class="heading_2">50% Off</h2>
+                </div>
+                <button type="button" class="btn btn-warning">Shop</button>
+              </div>
+            </div>
+            <div class="col-md-9 categories">
+              <t t-foreach="categories" t-as="c">
+                <t t-call="website_mega_menus.categories_recursive">
+                  <t t-set="col_size" t-value="-4"/>
+                </t>
+              </t>
+            </div>
+          </div>
+        </t>
+        <t t-else="">
+          <div class="row main_body">
+            <div class="col-md-3 offer_img">
+              <img src="/website_mega_menus/static/src/img/cl2.jpg"/>
+              <div class="img-overlay">
+                <div class="headings">
+                  <h4 class="heading_1">SALE</h4>
+                  <h2 class="heading_2">50% Off</h2>
+                </div>
+                <button type="button" class="btn btn-warning">Shop</button>
+              </div>
+            </div>
+            <div class="col-md-9 categories">
+              <t t-foreach="range(3)" t-as="menu_title">
+                <t t-call="website_mega_menus.categories_temp">
+                  <t t-set="col_size" t-value="-4"/>
+                </t>
+              </t>
+            </div>
+          </div>
+        </t>
+      </section>
+    </template>
+
+    <template id="mega_menu_snippet_8" name="Mega-Menu Snippet 8">
+      <section class="mega_menu_snippet_8">
+        <t t-if="categories">
+          <t t-set="url" t-value="none"/>
+          <div class="col-12 m-0" t-attf-style="background-color:##{body_bg or 'unset'};color:##{body_color or '212121'}">
+            <t t-foreach="categories" t-as="c">
+              <t t-call="website_mega_menus.categories_recursive">
+                <t t-set="col_size" t-value=""/>
+              </t>
+            </t>
+          </div>
+        </t>
+
+        <t t-else="">
+          <div class="col-12">
+            <t t-foreach="range(8)" t-as="x">
+              <t t-call="website_mega_menus.categories_temp">
+                <t t-set="col_size" t-value=""/>
+              </t>
+            </t>
+          </div>
+        </t>
+      </section>
+    </template>
+
+
+    <template id="categories_recursive_child_2" name="Category Child list 2">
+      <div t-attf-class="tab-pane fade #{'show active' if cat_lvl == 1 else ''}" t-attf-id="#{slug(c)}" role="tabpanel" t-attf-aria-labelledby="#{slug(c)}-tab">
+        <div class="heading">
+          <h3 t-attf-style="color:##{root_color or '212121'}"><t t-esc="c.name"/></h3>
+        </div>
+        <div class="all_cats">
+          <t t-if="c.child_id" class="child_categories">
+            <t t-foreach="c.child_id" t-as="c1">
+              <t t-set="level" t-value="0"/>
+              <t t-call="website_mega_menus.categories_recursive_child"/>
+            </t>
+          </t>
+        </div>
+      </div>
+		</template>
+
+		<template id="categories_recursive_2" name="Category list 2">
+      <li class="nav-item">
+        <a t-attf-class="nav-link #{'active' if cat_lvl == 1 else ''}" t-attf-id="#{slug(c)}-tab" data-toggle="tab" t-attf-href="##{slug(c)}" role="tab" aria-controls="home" aria-selected="true" t-attf-style="color:##{root_color or '212121'}" t-attf-target="#{'_blank' if new_window else ''}">
+          <span><t t-esc="c.name"/></span>
+          <span class="fa fa-caret-right"></span>
+        </a>
+      </li>
+		</template>
+
+    <template id="mega_menu_snippet_9" name="Mega-Menu Snippet 9">
+      <section class="mega_menu_snippet_9">
+        <t t-if="categories">
+          <div class="row main_body" t-attf-style="background-color:##{body_bg or 'unset'};color:##{body_color or '212121'}">
+            <div class="col-md-3">
+              <ul class="nav nav-pills flex-column" id="gt_tab" role="tablist">
+                <t t-set="cat_lvl" t-value="0"/>
+                <t t-foreach="categories" t-as="c">
+                  <t t-set="cat_lvl" t-value="cat_lvl+1"/>
+                  <t t-call="website_mega_menus.categories_recursive_2"/>
+                </t>
+              </ul>
+            </div>
+            <div class="col-md-9">
+              <div class="row main_cat_content">
+                <div class="col">
+                  <div class="tab-content" id="gt_TabContent">
+                    <t t-set="cat_lvl" t-value="0"/>
+                    <t t-foreach="categories" t-as="c">
+                      <t t-set="cat_lvl" t-value="cat_lvl+1"/>
+                      <t t-call="website_mega_menus.categories_recursive_child_2"/>
+                    </t>
+                  </div>
+                </div>
+              </div>
+              <div class="row offer_row">
+                <div class="col">
+                  <div class="offer_footer">
+                    <div class="row">
+                      <div class="col">
+                        <img src="/website_mega_menus/static/src/img/img-1-mega-menu-5.png"/>
+                        <div class="img-overlay">
+                          <div class="headings">
+                            <h4 class="heading_1">SALE</h4>
+                            <h2 class="heading_2">50% Off</h2>
+                          </div>
+                          <button type="button" class="btn btn-warning">Shop</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </t>
+
+        <t t-else="">
+          <div class="row main_body main_body_temp">
+            <div class="col-md-3">
+              <ul class="nav nav-pills flex-column" id="gt_tab" role="tablist">
+                <t t-set="cat_lvl" t-value="0"/>
+                <t t-foreach="range(5)" t-as="r">
+                  <t t-set="cat_lvl" t-value="cat_lvl+1"/>
+                  <li class="nav-item">
+                    <a t-attf-class="nav-link #{'active' if cat_lvl == 1 else ''}" t-attf-id="d-#{r}-tab" data-toggle="tab" t-attf-href="#d-#{r}" role="tab" aria-controls="home" aria-selected="true">
+                      <span>Menu 1</span>
+                    </a>
+                  </li>
+                </t>
+              </ul>
+            </div>
+            <div class="col-md-9">
+              <div class="row main_cat_content">
+                <div class="col">
+                  <div class="tab-content" id="gt_TabContent">
+                    <t t-set="cat_lvl" t-value="0"/>
+                    <t t-foreach="range(5)" t-as="r">
+                      <t t-set="cat_lvl" t-value="cat_lvl+1"/>
+                      <div t-attf-class="tab-pane fade #{'show active' if cat_lvl == 1 else ''}" t-attf-id="d-#{r}" role="tabpanel" t-attf-aria-labelledby="d-#{r}-tab">
+                        <t t-foreach="range(30)" t-as="i">
+                          <div class="levelclass">
+                            <a href="/">Menu <t t-esc="i"/></a>
+                          </div>
+                        </t>
+                      </div>
+                    </t>
+                  </div>
+                </div>
+              </div>
+              <div class="row offer_row">
+                <div class="col">
+                  <div class="offer_footer">
+                    <div class="row">
+                      <div class="col">
+                        <img src="/web/image/website.s_mega_menu_menu_image_menu_default_image"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </t>
+      </section>
+    </template>
+
+    <template id="website_mega_menus_snippets" inherit_id="website.snippets" name="Website Mega Menu Snippets">
+
+      <xpath expr="//div[@id='snippet_mega_menu']" position="inside">
+        <div id="website_mega_menus_snippets" class="o_panel">
+          <div class="o_panel_header">
+            <i class="fa fa-th-large"/> Website Menu Menus
+          </div>
+          <div class="o_panel_body">
+            <t t-snippet="website_mega_menus.mega_menu_snippet_1" t-thumbnail="/website_mega_menus/static/src/img/thumbnail.png"/>
+            <t t-snippet="website_mega_menus.mega_menu_snippet_2" t-thumbnail="/website_mega_menus/static/src/img/thumbnail.png"/>
+            <t t-snippet="website_mega_menus.mega_menu_snippet_3" t-thumbnail="/website_mega_menus/static/src/img/thumbnail.png"/>
+            <t t-snippet="website_mega_menus.mega_menu_snippet_4" t-thumbnail="/website_mega_menus/static/src/img/thumbnail.png"/>
+            <t t-snippet="website_mega_menus.mega_menu_snippet_5" t-thumbnail="/website_mega_menus/static/src/img/thumbnail.png"/>
+            <t t-snippet="website_mega_menus.mega_menu_snippet_6" t-thumbnail="/website_mega_menus/static/src/img/thumbnail.png"/>
+            <t t-snippet="website_mega_menus.mega_menu_snippet_7" t-thumbnail="/website_mega_menus/static/src/img/thumbnail.png"/>
+            <t t-snippet="website_mega_menus.mega_menu_snippet_8" t-thumbnail="/website_mega_menus/static/src/img/thumbnail.png"/>
+            <t t-snippet="website_mega_menus.mega_menu_snippet_9" t-thumbnail="/website_mega_menus/static/src/img/thumbnail.png"/>
+          </div>
+        </div>
+      </xpath>
+
+    </template>
+
+  </data>
+</odoo>

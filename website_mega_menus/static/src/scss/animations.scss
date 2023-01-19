@@ -1,0 +1,211 @@
+@-webkit-keyframes sweep_down {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes sweep_down {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+@-webkit-keyframes sweep_up {
+  from {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes sweep_up {
+  from {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+
+@-webkit-keyframes sweep_left {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes sweep_left {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+@-webkit-keyframes sweep_right {
+  from {
+    transform: translateX(20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes sweep_right {
+  from {
+    transform: translateX(20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes scroll_down {
+  from {
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+  }
+  to {
+    transform: scaleY(1);
+    transform-origin: top;
+    opacity: 1;
+  }
+}
+@keyframes scroll_down {
+  from {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  to {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+
+@-webkit-keyframes scroll_up {
+  from {
+    transform: scaleY(0);
+    transform-origin: bottom;
+    opacity: 0;
+  }
+  to {
+    transform: scaleY(1);
+    transform-origin: bottom;
+    opacity: 1;
+  }
+}
+@keyframes scroll_up {
+  from {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+  to {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+}
+
+@include media-breakpoint-up(md) {
+    #top_menu,
+    #top_menu_collapse {
+        .wk_mega_menu {
+            &.wk_hover{
+              &:hover{
+                .wk_mega_menu_content{
+                  &.sweep_down{
+                    -webkit-animation: sweep_down 0.2s ease-out both;
+                    animation: sweep_down 0.2s ease-out both;
+                    display: block;
+                  }
+                  &.sweep_up{
+                    -webkit-animation: sweep_up 0.2s ease-out both;
+                    animation: sweep_up 0.2s ease-out both;
+                    display: block;
+                  }
+                  &.sweep_left{
+                    -webkit-animation: sweep_left 0.2s ease-out both;
+                    animation: sweep_left 0.2s ease-out both;
+                    display: block;
+                  }
+                  &.sweep_right{
+                    -webkit-animation: sweep_right 0.2s ease-out both;
+                    animation: sweep_right 0.2s ease-out both;
+                    display: block;
+                  }
+                  &.scroll_down{
+                    -webkit-animation: scroll_down 0.2s ease-out both;
+                    animation: scroll_down 0.2s ease-out both;
+                    display: block;
+                  }
+                  &.scroll_up{
+                    -webkit-animation: scroll_up 0.2s ease-out both;
+                    animation: scroll_up 0.2s ease-out both;
+                    display: block;
+                  }
+                }
+              }
+            }
+            &.show{
+              .wk_mega_menu_content{
+                &.sweep_down{
+                  -webkit-animation: sweep_down 0.2s ease-out both;
+                  animation: sweep_down 0.2s ease-out both;
+                  display: block;
+                }
+                &.sweep_up{
+                  -webkit-animation: sweep_up 0.2s ease-out both;
+                  animation: sweep_up 0.2s ease-out both;
+                  display: block;
+                }
+                &.sweep_left{
+                  -webkit-animation: sweep_left 0.2s ease-out both;
+                  animation: sweep_left 0.2s ease-out both;
+                  display: block;
+                }
+                &.sweep_right{
+                  -webkit-animation: sweep_right 0.2s ease-out both;
+                  animation: sweep_right 0.2s ease-out both;
+                  display: block;
+                }
+                &.scroll_down{
+                  -webkit-animation: scroll_down 0.2s ease-out both;
+                  animation: scroll_down 0.2s ease-out both;
+                  display: block;
+                }
+                &.scroll_up{
+                  -webkit-animation: scroll_up 0.2s ease-out both;
+                  animation: scroll_up 0.2s ease-out both;
+                  display: block;
+                }
+              }
+            }
+          }
+        }
+      }

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<template id="add_to_cart_ajax_with_qty_av_product" inherit_id="website_sale.product">
+		<xpath expr="//a[@id='add_to_cart']" position="replace">
+			<t t-set="add_to_cart_ajax_value" t-value="request.env['website'].get_current_website()"/>
+			<t t-if="add_to_cart_ajax_value.is_cart_ajax_field == True">
+				<a role="button" id="add_to_cart" t-att-data-value="add_to_cart_ajax_value.is_cart_ajax_field" class="btn btn-primary btn-lg mt16 js_add_cart_ajax a-submit d-block d-sm-inline-block" href="#"><i class="fa fa-shopping-cart"/> Add to Cart</a>
+			</t>
+			<t t-else="">
+				<a role="button" id="add_to_cart" class="btn btn-primary btn-lg mt16 js_check_product a-submit d-block d-sm-inline-block" href="#"><i class="fa fa-shopping-cart"/> Add to Cart</a>
+			</t>
+		</xpath>
+	</template>
+
+	<template id="add_to_cart_ajax_with_qty_av_products_add_to_cart" inherit_id="website_sale.products_add_to_cart" name="Ajax Add to Cart">
+        <xpath expr="//a[hasclass('a-submit')]" position="replace">
+            <t t-set="add_to_cart_ajax_value" t-value="request.env['website'].get_current_website()"/>
+            <t t-if="product_variant_id and add_to_cart_ajax_value.is_cart_ajax_field == True">
+                <a href="#" id="add_to_cart" t-att-data-value="add_to_cart_ajax_value.is_cart_ajax_field" role="button" class="btn btn-secondary a-submit" aria-label="Shopping cart" title="Shopping cart">
+                    <span class="fa fa-shopping-cart"/>
+                </a>
+            </t>
+            <t t-if="product_variant_id and add_to_cart_ajax_value.is_cart_ajax_field != True">
+            	<a href="#" role="button" class="btn btn-secondary a-submit" aria-label="Shopping cart" title="Shopping cart">
+                    <span class="fa fa-shopping-cart"/>
+                </a>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="product_quantity_selection" inherit_id="website_sale.products_item" active="False" customize_show="True" name="Quantity Selection">
+        <xpath expr="//div[hasclass('o_wsale_product_information_text')]" position="after">
+            <div class="css_quantity qty_selection input-group" contenteditable="false" style="display: inline-flex;margin-bottom: 5px;">
+                <div class="input-group-prepend">
+                    <a t-attf-href="#" class="btn btn-secondary js_add_cart_json" aria-label="Remove one" title="Remove one">
+                        <i class="fa fa-minus"></i>
+                    </a>
+                </div>
+                <input type="text" class="form-control quantity" data-min="1" name="add_qty" t-att-value="add_qty or 1"/>
+                <div class="input-group-append">
+                    <a t-attf-href="#" class="btn btn-secondary float_left js_add_cart_json" aria-label="Add one" title="Add one">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

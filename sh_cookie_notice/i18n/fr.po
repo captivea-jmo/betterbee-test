@@ -1,0 +1,107 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sh_cookie_notice
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.1alpha1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-08 05:29+0000\n"
+"PO-Revision-Date: 2020-10-08 05:29+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sh_cookie_notice
+#: model:ir.model.fields.selection,name:sh_cookie_notice.selection__website__sh_position__top
+msgid "Banner Top"
+msgstr "Haut de la bannière"
+
+#. module: sh_cookie_notice
+#: model:ir.model.fields.selection,name:sh_cookie_notice.selection__website__sh_position__bottom
+msgid "Banner bottom"
+msgstr "Bas de la bannière"
+
+#. module: sh_cookie_notice
+#: model:ir.model.fields.selection,name:sh_cookie_notice.selection__website__sh_position__static_top
+msgid "Banner top (pushdown)"
+msgstr "Haut de la bannière (déroulant)"
+
+#. module: sh_cookie_notice
+#: model:ir.model.fields,field_description:sh_cookie_notice.field_res_config_settings__sh_btn_text
+#: model:ir.model.fields,field_description:sh_cookie_notice.field_website__sh_btn_text
+msgid "Button Text"
+msgstr "Texte du bouton"
+
+#. module: sh_cookie_notice
+#: model:ir.model,name:sh_cookie_notice.model_res_config_settings
+msgid "Config Settings"
+msgstr "Paramètres de configuration"
+
+#. module: sh_cookie_notice
+#: model:ir.model.fields,field_description:sh_cookie_notice.field_res_config_settings__sh_is_cookie_notice
+#: model:ir.model.fields,field_description:sh_cookie_notice.field_website__sh_is_cookie_notice
+#: model_terms:ir.ui.view,arch_db:sh_cookie_notice.sh_cookie_notice_website_config_settings
+#: model_terms:ir.ui.view,arch_db:sh_cookie_notice.sh_cookie_notice_website_form
+msgid "Cookie Notice"
+msgstr "Avis sur les cookies"
+
+#. module: sh_cookie_notice
+#: model:ir.model.fields,field_description:sh_cookie_notice.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:sh_cookie_notice.field_website__display_name
+msgid "Display Name"
+msgstr "Afficher un nom"
+
+#. module: sh_cookie_notice
+#: model:ir.model.fields.selection,name:sh_cookie_notice.selection__website__sh_position__bottom-left
+msgid "Floating left"
+msgstr "Flottant à gauche"
+
+#. module: sh_cookie_notice
+#: model:ir.model.fields.selection,name:sh_cookie_notice.selection__website__sh_position__bottom-right
+msgid "Floating right"
+msgstr "Flottant à droite"
+
+#. module: sh_cookie_notice
+#: model:ir.model.fields,field_description:sh_cookie_notice.field_res_config_settings__id
+#: model:ir.model.fields,field_description:sh_cookie_notice.field_website__id
+msgid "ID"
+msgstr "ID"
+
+#. module: sh_cookie_notice
+#: model:ir.model.fields,field_description:sh_cookie_notice.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:sh_cookie_notice.field_website____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: sh_cookie_notice
+#: model:ir.model.fields,field_description:sh_cookie_notice.field_res_config_settings__sh_message
+#: model:ir.model.fields,field_description:sh_cookie_notice.field_website__sh_message
+msgid "Message"
+msgstr "Un message"
+
+#. module: sh_cookie_notice
+#: model:ir.model.fields,field_description:sh_cookie_notice.field_res_config_settings__sh_policy_link_text
+#: model:ir.model.fields,field_description:sh_cookie_notice.field_website__sh_policy_link_text
+msgid "Policy Link Text"
+msgstr "Texte du lien de politique"
+
+#. module: sh_cookie_notice
+#: model:ir.model.fields,field_description:sh_cookie_notice.field_res_config_settings__sh_policy_url
+#: model:ir.model.fields,field_description:sh_cookie_notice.field_website__sh_policy_url
+msgid "Policy URL"
+msgstr "URL de la politique"
+
+#. module: sh_cookie_notice
+#: model:ir.model.fields,field_description:sh_cookie_notice.field_res_config_settings__sh_position
+#: model:ir.model.fields,field_description:sh_cookie_notice.field_website__sh_position
+msgid "Position"
+msgstr "Positionner"
+
+#. module: sh_cookie_notice
+#: model:ir.model,name:sh_cookie_notice.model_website
+msgid "Website"
+msgstr "Site Internet"

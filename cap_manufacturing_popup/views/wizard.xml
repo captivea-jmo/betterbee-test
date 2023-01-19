@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="wizard_popup_view_form" model="ir.ui.view">
+            <field name="name">mrp.wizard.form</field>
+            <field name="model">mrp.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Processed products">
+                    <field name="name"/>
+                    <field name="processed_mo"/>
+                    <field name="processed_wo" invisible="1"/>
+                    <field name="product_ids">
+                        <tree nolabel="1" editable="top" options="'no_open': True">
+                          <field name="product_id" readonly="1"/>
+                          <field name="quantity"/>
+                        </tree>
+                    </field>
+                </form>
+                <footer>
+                    <button type="object" name="finishProduction" string="Finish production" class="btn btn-primary"/>
+                </footer>
+            </field>
+        </record>
+    </data>
+</odoo>

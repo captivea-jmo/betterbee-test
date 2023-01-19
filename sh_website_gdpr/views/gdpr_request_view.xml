@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- GDPR Request Tree -->
+    <record id="sh_website_gdpr_request_tree" model="ir.ui.view">
+        <field name="name">sh.gdpr.data.request.tree</field>
+        <field name="model">sh.gdpr.data.request</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="partner_id" />
+                <field name="request_type" />
+                <field name="data_categ_id" />
+                <field name="state" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- GDPR Request Form -->
+    <record id="sh_website_gdpr_request_form" model="ir.ui.view">
+        <field name="name">sh.gdpr.data.request.form</field>
+        <field name="model">sh.gdpr.data.request</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar" />
+                    <button name="done_btn" string="Done" type="object" class="btn-primary" attrs="{'invisible': [('state','=', 'done')]}" />
+                    <button name="data_btn" string="Generate Data" type="object" class="btn-primary" attrs="{'invisible': [('request_type','=', 'delete')]}" />
+                    <button name="wipe_btn" string="Wipe Data" type="object" class="btn-primary" attrs="{'invisible': [('request_type','=', 'download')]}" />
+                    <button name="%(sh_website_gdpr.sh_website_gdpr_cancel_reason_wizard_action)d" string="Cancel" type="action" class="btn-secondary" attrs="{'invisible': [('state','=', 'cancel')]}" />
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="partner_id" />
+                            <field name="attachment" />
+
+                            <field name="data_wiped" readonly="1" />
+                        </group>
+                        <group>
+                            <field name="data_categ_id" />
+                            <field name="request_type" />
+                            <field name="website_id" groups="website.group_multi_website" />
+                            <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company" />
+                        </group>
+                    </group>
+                    <group>
+                        <field name="cancel_reason" attrs="{'invisible': [('cancel_reason', '=', False)]}" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- GDPR Request Search-->
+    <record id="sh_website_gdpr_request_search" model="ir.ui.view">
+        <field name="name">sh.gdpr.data.request.search</field>
+        <field name="model">sh.gdpr.data.request</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" filter_domain="['|','|','|','|',('name', 'ilike', self),('partner_id', 'ilike', self),('data_categ_id', 'ilike', self),('request_type', 'ilike', self),('state', 'ilike', self)]" />
+                <field name="partner_id" filter_domain="[('partner_id', 'ilike', self)]" />
+                <field name="data_categ_id" filter_domain="[('data_categ_id', 'ilike', self)]" />
+                <field name="request_type" filter_domain="[('request_type', 'ilike', self)]" />
+                <field name="state" filter_domain="[('state', 'ilike', self)]" />
+                <filter string="Pending" name="pending" domain="[('state', '=','pending')]" />
+                <filter string="Done" name="done" domain="[('state', '=','done')]" />
+                <filter string="Cancel" name="cancel" domain="[('state', '=','cancel')]" />
+                <group expand="0" string="Group By">
+                    <filter string="Request Type" name="request_type" context="{'group_by':'request_type'}" />
+                </group>
+                <group expand="0" string="Group By">
+                    <filter string="Customer" name="partner_id" context="{'group_by':'partner_id'}" />
+                </group>
+                <group expand="0" string="Group By">
+                    <filter string="States" name="state" context="{'group_by':'state'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- GDPR Request Action-->
+    <record id="sh_website_gdpr_request_action" model="ir.actions.act_window">
+        <field name="name">Data GDPR Request</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="context">{'search_default_pending': 1}</field>
+        <field name="res_model">sh.gdpr.data.request</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- GDPR Request Menu-->
+    <menuitem id="sh_website_gdpr_request_menu" action="sh_website_gdpr_request_action" name="GDPR Request" parent="sh_website_gdpr_menu" />
+</odoo>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="mrp_workorder_custom_form_view" model="ir.ui.view">
+            <field name="name">mrp.workorder.custom.form.view</field>
+            <field name="model">mrp.workorder</field>
+            <field name="inherit_id" ref="mrp.mrp_production_workorder_form_view_inherit"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='state']" position="replace">
+                    <field name="state" widget="statusbar" />
+                </xpath>
+            </field>
+        </record>
+        <record id="mrp_workorder_custom_view" model="ir.ui.view">
+            <field name="name">mrp.workorder.custom.view</field>
+            <field name="model">mrp.workorder</field>
+            <field name="inherit_id" ref="mrp_workorder.mrp_workorder_view_form_tablet"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('o_actions')]" position="after">
+                    <button name="do_proc_finish" type="object" string="Complete production" class="btn-primary" attrs="{'invisible':[('is_a_process','=',False)]}"/>
+                    <field name="is_a_process" attrs="{'invisible':True}"/>
+                </xpath>
+                <xpath expr="//button[@name='action_open_manufacturing_order']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//button[@name='do_finish']" position="attributes">
+<!--                     <attribute name="attrs">{'invisible':[('is_a_process','=',True)]}</attribute> -->
+                    <attribute name="string">Open Wizard</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

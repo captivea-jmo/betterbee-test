@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <!-- For Download Request -->
+
+    <!-- Company to Responsible Person for Download Request-->
+    <record id="email_template_download_responsible_person" model="mail.template">
+        <field name="name">Notification for responsible person</field>
+        <field name="model_id" ref="sh_website_gdpr.model_sh_gdpr_data_request" />
+        <field name="use_default_to" eval="True" />
+        <field name="email_from">${(object.company_id.email) | safe}</field>
+        <field name="lang">${object.env.context.get("lang")}</field>
+        <field name="subject">Thanks for your request</field>
+        <field name="body_html" type="html">
+            <div style="line-height: 28px;">
+                Hello There,<br />
+                <b>${object.partner_id.name}</b> have requested information of <b>${object.data_categ_id.name}.</b>
+                <br />
+                <a class="btn btn-primary" role="button" href="${object.env.context.get('customer_url')}">Click here to check request</a>
+                <br />
+                <div>Thank you</div>
+            </div>
+        </field>
+    </record>
+
+    <!-- Company to Customer for Download Request-->
+    <record id="email_template_download_customer" model="mail.template">
+        <field name="name">Notification for customer</field>
+        <field name="model_id" ref="sh_website_gdpr.model_sh_gdpr_data_request" />
+        <field name="use_default_to" eval="True" />
+        <field name="email_from">${(object.company_id.email) | safe}</field>
+        <field name="email_to">${object.partner_id.email | safe}</field>
+        <field name="lang">${object.env.context.get("lang")}</field>
+        <field name="subject">Thanks for your request</field>
+        <field name="body_html" type="html">
+            <div style="line-height: 28px;">
+                Hello <b>${object.partner_id.name}</b>,<br />
+                You have requested to information of <b>${object.data_categ_id.name}</b>.<br />
+                We will provide information as soon as possible.
+                <br />
+                <a class="btn btn-primary" role="button" href="${object.env.context.get('customer_url')}">Click here to check request</a>
+                <br />
+                <div>Thank you</div>
+            </div>
+        </field>
+    </record>
+
+    <!-- Company responded to Customer for Download -->
+    <record id="email_template_download_success" model="mail.template">
+        <field name="name">Notification for customer</field>
+        <field name="model_id" ref="sh_website_gdpr.model_sh_gdpr_data_request" />
+        <field name="use_default_to" eval="True" />
+        <field name="email_from">${(object.company_id.email) | safe}</field>
+        <field name="lang">${object.env.context.get("lang")}</field>
+        <field name="subject">Thanks for your request</field>
+        <field name="body_html" type="html">
+            <div style="line-height: 28px;">
+                Hello <b>${object.partner_id.name}</b>,<br />
+                You have requested information of <b>${object.data_categ_id.name}</b>.<br />
+                We have provided information here.
+                <br />
+                <a class="btn btn-primary" role="button" href="${object.env.context.get('customer_url')}">Click here to check request</a>
+                <br />
+                <div>Thank you</div>
+            </div>
+        </field>
+    </record>
+
+    <!-- For Delete Request -->
+
+    <!-- Company to Responsible Person for Delete Request-->
+    <record id="email_template_delete_responsible_person" model="mail.template">
+        <field name="name">Notification for responsible person</field>
+        <field name="model_id" ref="sh_website_gdpr.model_sh_gdpr_data_request" />
+        <field name="use_default_to" eval="True" />
+        <field name="email_from">${(object.company_id.email) | safe}</field>
+        <field name="email_to">${object.partner_id.email | safe}</field>
+        <field name="lang">${object.env.context.get("lang")}</field>
+        <field name="subject">Thanks for your request</field>
+        <field name="body_html" type="html">
+            <div style="line-height: 28px;">
+                Hello There,<br />
+                <b>${object.partner_id.name}</b> have requested to remove information of <b>${object.data_categ_id.name}.</b>
+                <br />
+                <a class="btn btn-primary" role="button" href="${object.env.context.get('customer_url')}">Click here to check request</a>
+                <br />
+                <div>Thank you</div>
+            </div>
+        </field>
+    </record>
+
+    <!-- Company to Customer for Delete Request -->
+    <record id="email_template_delete_customer" model="mail.template">
+        <field name="name">Notification for customer</field>
+        <field name="model_id" ref="sh_website_gdpr.model_sh_gdpr_data_request" />
+        <field name="use_default_to" eval="True" />
+        <field name="email_from">${(object.company_id.email) | safe}</field>
+        <field name="email_to">${object.partner_id.email | safe}</field>
+        <field name="lang">${object.env.context.get("lang")}</field>
+        <field name="subject">Thanks for your request</field>
+        <field name="body_html" type="html">
+            <div style="line-height: 28px;">
+                Hello <b>${object.partner_id.name}</b>,<br />
+                You have requested to remove information of <b>${object.data_categ_id.name}</b>.<br />
+                We will remove your information as soon as possible.
+                <br />
+                <a class="btn btn-primary" role="button" href="${object.env.context.get('customer_url')}">Click here to check request</a>
+                <br />
+                <div>Thank you</div>
+            </div>
+        </field>
+    </record>
+
+    <!-- Company responded to Customer for Delete -->
+    <record id="email_template_delete_success" model="mail.template">
+        <field name="name">Notification for customer</field>
+        <field name="model_id" ref="sh_website_gdpr.model_sh_gdpr_data_request" />
+        <field name="use_default_to" eval="True" />
+        <field name="email_from">${(object.company_id.email) | safe}</field>
+        <field name="lang">${object.env.context.get("lang")}</field>
+        <field name="subject">Thanks for your request</field>
+        <field name="body_html" type="html">
+            <div style="line-height: 28px;">
+                Hello <b>${object.partner_id.name}</b>,<br />
+                You have requested to remove information of <b>${object.data_categ_id.name}</b>.<br />
+                We have successfully removed information.
+                <br />
+                <a class="btn btn-primary" role="button" href="${object.env.context.get('customer_url')}">Click here to check request</a>
+                <br />
+                <div>Thank you</div>
+            </div>
+        </field>
+    </record>
+</odoo>

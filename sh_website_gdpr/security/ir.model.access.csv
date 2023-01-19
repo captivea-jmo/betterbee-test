@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sh_gdpr_data_category,access_sh_gdpr_data_category,model_sh_gdpr_data_category,,1,1,1,1
+access_sh_gdpr_data_request,access_sh_gdpr_data_request,model_sh_gdpr_data_request,,1,1,1,1
+access_sh_website_gdpr_cancel_reason_wizard,access_sh_website_gdpr_cancel_reason_wizard,model_sh_website_gdpr_cancel_reason_wizard,,1,1,1,1

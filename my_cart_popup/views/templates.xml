@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="product_tis_add_to_cart" inherit_id="website_sale.product" customize_show="True"
+              name="Select Quantity">
+        <xpath expr="//a[@id='add_to_cart']" position="attributes">
+            <attribute name="class">btn btn-secondary btn-lg mt16 js_check_product a-submit d-block d-sm-inline-block
+                tis_add_to_cart
+            </attribute>
+        </xpath>
+    </template>
+
+    <template id="website_sale.products_add_to_cart" inherit_id="website_sale.products_item" active="False"
+              customize_show="True" name="Add to Cart">
+        <xpath expr="//div[@class='o_wsale_product_btn']" position="inside">
+            <input name="product_id" class="product_id" t-att-value="product.product_variant_id.id" type="hidden"/>
+            <t t-if="len(product.product_variant_ids) == 1">
+                <a class="btn btn-secondary a-submit tis_add_to_cart">
+                    <span class="fa fa-shopping-cart"/>
+                </a>
+            </t>
+            <t t-if="len(product.product_variant_ids) &gt; 1">
+                <a class="btn btn-secondary a-submit tis_add_to_cart"
+                   t-att-href="keep('/shop/product/%s' % slug(product), page=(pager['page']['num'] if pager['page']['num']&gt;1 else None))">
+                    <span class="fa fa-shopping-cart"/>
+                </a>
+            </t>
+        </xpath>
+    </template>
+
+</odoo>

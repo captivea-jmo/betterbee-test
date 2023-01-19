@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="website_cookie_notice_tree" model="ir.ui.view">
+            <field name="name">website.cookie.notice.tree</field>
+            <field name="model">website.cookie.notice</field>
+            <field name="arch" type="xml">
+                <tree string="Cookie Configuration">
+                    <field name="popup_title"/>
+                </tree>
+            </field>
+        </record>
+        <record id="website_cookie_notice_view_form" model="ir.ui.view">
+            <field name="name">website.cookie.notice.view.form</field>
+            <field name="model">website.cookie.notice</field>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <form string="Cookie Configuration">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="popup_title"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="cookies_path" />
+                            </group>
+                            <group>
+                                <field name="cookies_expire_time" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="cookie_popup_style" string="Cookie Style">
+                                <group>
+                                    <group string="Theme &amp; Style Options">
+                                        <field name="box_skin" />
+                                        <field name="box_style" />
+                                        <field name="box_shape" invisible="1"/>
+                                        <field name="cookies_groups_design" />
+                                    </group>
+                                    <group string="Positions">
+                                        <field name="popup_position" />
+                                        <field name="gear_icon_position" />
+                                    </group>
+                                </group>
+                                <group string="Colors (Hex Format)">
+                                    <group>
+                                        <field name="background_color" attrs="{'invisible': [('box_skin', 'not in', ['skin-default-theme'])]}" />
+                                        <field name="text_color" attrs="{'invisible': [('box_skin', 'not in', ['skin-default-theme'])]}" />
+                                        <field name="cookie_popup_close_color" invisible="1" />
+                                    </group>
+                                    <group>
+                                        <field name="button_color" attrs="{'invisible': [('box_skin', 'not in', ['skin-default-theme'])]}" />
+                                        <field name="gear_icon_color" />
+                                    </group>
+                                </group>
+                                <group>
+                                    <group string="Distance in (px) &amp; Size">
+                                        <field name="distance" />
+                                        <field name="button_size" attrs="{'invisible': ['|', ('box_skin', 'not in', ['skin-default-theme']),('box_style', 'not in', ['modern'])]}"/>
+                                    </group>
+                                    <group string="Cookie Settings Always on Display">
+                                        <field name="gear_display" />
+                                    </group>
+                                </group>
+                            </page>
+                            <page name="cookie_popup_options" string="Cookie Options">
+                                <group string="Popup Text">
+                                    <field name="popup_text" nolabel="1" />
+                                </group>
+                                <group string="Accept Button Text &amp; Reject Button Text">
+                                    <group>
+                                        <field name="accept_button_text" />
+                                    </group>
+                                    <group>
+                                        <field name="reject_button_text" />
+                                    </group>
+                                </group>
+                                <group>
+                                    <group string="Read More Button Text &amp; Link">
+                                        <field name="read_button_text" />
+                                        <field name="read_more_link" />
+                                    </group>
+                                    <group string="Advanced Button Text">
+                                         <field name="advenced_button_text"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page name="cookie_setting_popup_options" string="Cookie Settings Popup">
+                                <group>
+                                    <group string="Setting Popup Text">
+                                        <field name="setting_popup_title" />
+                                    </group>
+                                    <group string="Close Popup Text">
+                                        <field name="close_popup_text" />
+                                    </group>
+                                </group>
+                                <group string="Setting Popup Descriptions">
+                                    <field name="setting_popup_description" nolabel="1" />
+                                </group>
+                                <group string="Cookie Groups Slider Text">
+                                    <field name="group_slider_title" nolabel="1" />
+                                </group>
+                                <group string="Accepted &amp; Declined Text">
+                                    <group >
+                                        <field name="accepted_text" />
+                                    </group>
+                                    <group>
+                                        <field name="declined_text" />
+                                    </group>
+                                </group>
+                                <group>
+                                    <group string="Save Button Text">
+                                        <field name="save_btn"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page name="cookie_groups" string="Cookie Groups">
+                                <group>
+                                    <group string="Default Required Cookie Group">
+                                        <field name="default_group_id" nolabel="1"/>
+                                    </group>
+                                </group>
+                                <group string="Cookie Groups">
+                                    <field name="cookie_group_ids" nolabel="1">
+                                        <tree>
+                                            <field name="name" />
+                                        </tree>
+                                        <form>
+                                            <group>
+                                                <group>
+                                                    <field name="name" />
+                                                    <field name="fa_icon" />
+                                                </group>
+                                                <group>
+                                                    <field name="code" />
+                                                </group>
+                                            </group>
+                                            <notebook>
+                                                <page string="Highlight Points">
+                                                    <field name="cookie_popup_group_info_ids" nolabel="1">
+                                                        <tree>
+                                                            <field name="name" />
+                                                        </tree>
+                                                        <form>
+                                                            <group>
+                                                                <field name="name" />
+                                                            </group>
+                                                        </form>
+                                                    </field>
+                                                </page>
+                                            </notebook>
+                                        </form>
+                                    </field>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="website_cookie_notice_action" model="ir.actions.act_window">
+            <field name="name">Website Cookie Notice</field>
+            <field name="res_model">website.cookie.notice</field>
+            <field name="view_mode">form</field>
+            <field name="res_id" ref="gdpr_cookie_notice.cookie_settings"/>
+        </record>
+        <menuitem id="menu_website_cookie_notice"
+                  name="Cookie Settings"
+                  action="website_cookie_notice_action"
+                  parent="website.menu_website_global_configuration"
+                  sequence="11"/>
+    </data>
+</odoo>

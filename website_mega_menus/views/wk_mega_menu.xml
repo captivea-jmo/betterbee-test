@@ -1,0 +1,52 @@
+<odoo>
+  <data>
+
+    <record id="wk_mega_menu_form" model="ir.ui.view">
+      <field name="name">Wk mega menu</field>
+      <field name="model">wk.mega.menu</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                <field name="name" required="True"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <field name="wk_mega_menu_template" required="1"/>
+                <field name="mega_menu_open_action"/>
+                <field name="mega_menu_open_animation"/>
+                <field name="mega_menu_height"/>
+                <field name="mega_menu_width"/>
+                <!-- <field name="carousel_id"/> -->
+              </group>
+              <group>
+                <!-- <field name="mega_menu_header_color" placeholder="212121"/> -->
+                <!-- <field name="mega_menu_header_bg" placeholder="212121"/> -->
+                <field name="mega_menu_body_color" placeholder="212121"/>
+                <!-- <field name="mega_menu_body_bg" placeholder="212121"/> -->
+                <field name="root_categ_color" placeholder="212121"/>
+                <field name="mega_menu_body_hover_color" placeholder="212121"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <record id="action_wk_mega_menu" model="ir.actions.act_window">
+        <field name="name">Wk Mega Menu Styles</field>
+        <field name="res_model">wk.mega.menu</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Wk Mega Menu Styles"
+        id="wk_mega_menus"
+        action="action_wk_mega_menu"
+        parent="website_mega_menus.root_wk_mega_menu"
+        groups="base.group_no_one"/>
+
+  </data>
+</odoo>
